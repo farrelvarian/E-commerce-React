@@ -1,0 +1,133 @@
+.page {
+    background-color: #e5e5e5;
+}
+
+.content-container {
+    display: flex;
+}
+
+.section-container {
+    height: 636px;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-wrapper {
+    display: flex;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30px;
+    margin-left: 30px;
+}
+
+.section-desc {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 6px;
+    margin-left: 30px;
+    color: #9b9b9b;
+}
+
+.section-name {
+    display: flex;
+    margin-left: 10px;
+    margin-bottom: 22px;
+    align-items: center;
+}
+
+.text-section {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    text-align: right;
+    width: 150px;
+    margin-right: 40px;
+    white-space: nowrap;
+}
+
+.input {
+    height: 48px;
+    width: 328px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.input.description {
+    height: 118px;
+    width: 328px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+    border-radius: 4px;
+    font-family: "Montserrat", sans-serif;
+}
+
+.select-input {
+    height: 40px;
+    width: 100px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    background-color: #ffffff;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 12px;
+    margin-right: 16px;
+}
+
+.vertical-line {
+    border-left: 1px solid #d4d4d4;
+    height: 166px;
+    margin-left: 55px;
+}
+
+.profile-main {
+    width: 111px;
+    height: 111px;
+    border-radius: 50%;
+    margin-left: 55px;
+}
+
+.btn-select-image {
+    margin-top: 19px;
+    margin-left: 45px;
+    width: 140px;
+    height: 36px;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-size: 14px;
+    background-color: white;
+    color: #9b9b9b;
+}
+
+.btn-save {
+    width: 160px;
+    height: 36px;
+    background: #db3022;
+    border-radius: 25px;
+    color: white;
+    margin-left: 40px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-left: 200px !important;
+    margin-right: 20px;
+}

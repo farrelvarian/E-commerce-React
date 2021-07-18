@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, Fragment } from "react";
+import Router from "./router/router";
+// import Home from "./pages/Home";
+// import Detail from "./pages/Detail";
+// import About from "./pages/About";
+// import Login from "./pages/Login";
+// import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    console.log("ini method render");
+    return (
+      <Router />
+      // <BrowserRouter>
+      //   <Switch>
+      //     {/* <Route exact path="/" component={Home} />
+      //     <Route exact path="/about" component={About} />
+      //     <Route path="/about/1" component={Detail} />
+      //     <Route path="/login" component={Login} /> */}
+      //   </Switch>
+      // </BrowserRouter>
+    );
+  }
 }
-
 export default App;

@@ -1,0 +1,38 @@
+@media (min-width: 992px) {
+    .col-md-24 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #8e8e93;
+}
+
+.col {
+    margin-top: 10px;
+}
+
+.card img.card-img-top {
+    height: 136px;
+    object-fit: none;
+    object-position: 13px 1%;
+}
+
+.card-body {
+    background-color: white;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .card img.card-img-top {
+        height: 136px;
+        object-fit: none;
+        object-position: -43px 1%;
+    }
+}

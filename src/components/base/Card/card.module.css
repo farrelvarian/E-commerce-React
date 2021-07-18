@@ -1,0 +1,37 @@
+.card {
+    color: black;
+    margin-top: 25px;
+}
+
+.card_title {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.card_price {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #db3022;
+}
+
+.card_brand {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #9b9b9b;
+}
+
+.star_wrapper {
+    margin-left: 10px;
+    display: flex;
+    margin-top: 11px;
+}
+
+.ratings {
+    margin-left: 2px;
+    font-size: 10px;
+    font-weight: 400;
+}

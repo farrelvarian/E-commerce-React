@@ -1,0 +1,12 @@
+.btn_primary {
+    font-size: 14px;
+    margin-top: 26px;
+    width: 400px;
+    height: 48px;
+    background: #db3022;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}

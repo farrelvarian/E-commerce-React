@@ -1,0 +1,183 @@
+.page {
+    background-color: #e5e5e5;
+}
+
+.content-container {
+    display: flex;
+}
+
+.section-container {
+    height: auto;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    margin-bottom: 30px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.section-desc {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    color: #9b9b9b;
+}
+
+.section-name {
+    display: flex;
+    margin-left: 25px;
+    padding-bottom: 40px;
+    align-items: center;
+}
+
+.text-section {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    text-align: right;
+    width: 150px;
+    margin-right: 40px;
+    white-space: nowrap;
+}
+
+.input {
+    height: 48px;
+    width: 348px;
+    text-align: left;
+    padding-left: 20px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+    border-radius: 4px;
+}
+
+.input.price {
+    margin-bottom: 0;
+}
+
+.input.stock {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+.radio {
+    height: 18px;
+    width: 18px;
+}
+
+.text-radio-stock {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    margin-left: 10px;
+    margin-right: 40px;
+    padding-top: 10px;
+}
+
+.container-photo {
+    width: 790px;
+    height: 375px;
+    border: 1px dashed #d4d4d4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.photo-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 790px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.foto.utama {
+    height: 190px;
+    width: 190px;
+}
+
+.foto {
+    height: 120px;
+    width: 120px;
+}
+
+.section-desc.photo {
+    margin-left: 75px;
+    margin-top: 10px;
+}
+
+.btn-upload {
+    width: 160px;
+    height: 36px;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid #9b9b9b;
+    box-sizing: border-box;
+    border-radius: 24px;
+    color: #9b9b9b;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 305px;
+    margin-bottom: 35px;
+}
+
+.section-container-photo {
+    height: auto;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    margin-bottom: 30px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-bottom: 40px;
+}
+
+.container-desc {
+    width: 790px;
+    height: 315px;
+    border: 1px solid #d4d4d4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin-left: 30px;
+}
+
+.section-container-desc {
+    height: auto;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    margin-bottom: 50px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-bottom: 100px;
+}
+
+.btn-jual {
+    width: 160px;
+    height: 36px;
+    background: #db3022;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    margin-left: 750px;
+    margin-bottom: 70px;
+}

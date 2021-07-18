@@ -1,0 +1,181 @@
+.navbar_container {
+    width: 100%;
+    min-height: 100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 6px 40px rgba(173, 173, 173, 0.25);
+    background-color: white;
+}
+
+.logo {
+    display: flex;
+    text-decoration: none;
+}
+
+.blanja {
+    color: #db3d23;
+    font-weight: 700;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-size: 24px;
+}
+
+.search_filter {
+    display: none;
+}
+
+.input_group.with_icon {
+    position: relative;
+    width: 507px;
+    height: 40px;
+    margin-left: 100px;
+}
+
+.fas {
+    position: absolute;
+    top: 12px;
+    left: 475px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.form_control_inputan {
+    width: 507px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 20px;
+    z-index: -1;
+    border: 1px solid #8e8e93;
+    border-radius: 23px;
+}
+
+.fa_search {
+    color: #8e8e93;
+    cursor: pointer;
+}
+
+.btnFilter {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #8e8e93;
+    border-radius: 12px;
+    margin-left: 11px;
+    background-color: transparent;
+}
+
+.cart_notif_mail_profile {
+    display: flex;
+}
+
+.cart {
+    margin-left: 1050px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notification {
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.mail {
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.profile {
+    margin-left: 45px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .navbar_container {
+        min-height: 100px;
+        max-width: 414px !important;
+        margin: 0 auto;
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 6px 40px rgba(173, 173, 173, 0.25);
+    }
+    .logo {
+        display: flex;
+        justify-self: center;
+        margin-top: 5px;
+    }
+    .search_filter {
+        display: none;
+        justify-content: space-between;
+        margin-top: 5px;
+    }
+    .fas {
+        position: absolute;
+        top: 12px;
+        left: 270px;
+        font-weight: bold;
+        font-style: normal;
+    }
+    .form_control_inputan {
+        width: 300px;
+        height: 40px;
+        font-size: 16px;
+        padding-left: 20px;
+        z-index: -10;
+        border: 1px solid #8e8e93;
+        border-radius: 23px;
+    }
+    .input_group.with_icon {
+        position: relative;
+        max-width: 300px;
+        height: 40px;
+        margin-left: 0;
+    }
+    .cart_notif_mail_profile {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .btnFilter {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #8e8e93;
+        border-radius: 12px;
+        margin-left: 11px;
+        background-color: transparent;
+    }
+    .cart {
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .notification {
+        margin-left: 45px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .mail {
+        margin-left: 45px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    .profile {
+        margin-left: 45px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

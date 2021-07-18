@@ -1,0 +1,17 @@
+.breadcrumb {
+    margin-left: 80px;
+    align-self: flex-start;
+    background-color: white;
+    z-index: -1;
+    margin-bottom: 0;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .breadcrumb {
+        margin-left: 0;
+        align-self: flex-start;
+        background-color: white;
+        z-index: -1;
+        margin-bottom: 0;
+    }
+}

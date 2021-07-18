@@ -1,0 +1,44 @@
+.custommer_seller {
+    width: 256px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.btn_custommer {
+    width: 123px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border: 1px solid #9b9b9b;
+    filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+    border-radius: 4px 0px 0px 4px;
+    outline: none;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    color: #9b9b9b;
+    cursor: pointer;
+}
+
+.btn_seller {
+    width: 123px;
+    height: 48px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #db3022;
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 4px 4px 0px;
+    outline: none;
+    background-color: #db3022;
+    margin: 0;
+    padding: 0;
+    color: white;
+    cursor: pointer;
+}

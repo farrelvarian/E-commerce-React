@@ -1,0 +1,47 @@
+.slider_wrapper {
+    margin-top: 47px;
+    width: 1440px;
+}
+
+.clipme {
+    position: absolute;
+    width: 456px !important;
+    height: 180px !important;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.content_slider {
+    margin-top: 30px;
+    width: 456px !important;
+    height: 180px !important;
+    display: flex;
+}
+
+.img_title {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .slider_wrapper {
+        margin-top: 47px;
+        width: 414px !important;
+    }
+    .slick-next {
+        margin-top: 15px;
+        margin-right: 40px;
+    }
+    .slick-prev {
+        margin-top: 15px;
+        margin-left: 40px;
+        z-index: 1;
+    }
+}

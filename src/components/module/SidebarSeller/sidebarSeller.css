@@ -1,0 +1,85 @@
+.sidebar-container {
+    width: 30%;
+    min-height: calc(100vh - 100px);
+    background-color: #f5f5f5;
+}
+
+.profile-seller {
+    border-radius: 50%;
+}
+
+.logo-pencil {
+    float: left;
+    margin-right: 9px;
+}
+
+.sidebar {
+    width: 600px;
+    background-color: #f5f5f5;
+}
+
+.sidebar-image {
+    display: flex;
+    margin-left: 350px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sidebar-profile-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 14px;
+    padding-top: 10px;
+}
+
+.ubah-profile-wrapper {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    margin-left: 14px;
+    margin-top: 4px;
+}
+
+.accordion {
+    background-color: transparent;
+    border: none;
+}
+
+.card.card-sidebar {
+    background-color: transparent;
+    border: none;
+}
+
+.card img.sidebar-logo {
+    height: auto;
+    margin-right: 30px;
+    object-position: 0px 0%;
+}
+
+.collapsed {
+    margin-left: 300px;
+    width: 200px;
+    color: black;
+    display: flex;
+}
+
+.collapsed:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.card-body.sidebar {
+    margin-left: 350px;
+    width: 200px;
+    background-color: transparent;
+}
+
+.btn.btn-link:not(:disabled):not(.disabled) {
+    margin-left: 300px;
+    width: 200px;
+}
+
+.accordion>.card>.card-header {
+    background-color: transparent;
+    border: none;
+}
