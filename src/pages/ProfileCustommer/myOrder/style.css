@@ -1,0 +1,25 @@
+.page {
+    background-color: #e5e5e5;
+}
+
+.section-container-myorder-custommer {
+    height: 636px;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .section-container-myorder-custommer {
+        height: 636px;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+}

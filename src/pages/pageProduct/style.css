@@ -425,4 +425,15 @@ h4 {
     .main-desc {
         width: 400px;
     }
+    .container.content-product {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 414px;
+    }
+    .product-title {
+        width: 350px;
+        margin-top: 50px;
+        margin-left: 25px;
+    }
 }

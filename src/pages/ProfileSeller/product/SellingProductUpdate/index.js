@@ -4,6 +4,7 @@ import Sidebar from "../../../../components/module/SidebarSeller";
 import "./style.css";
 import { useHistory, useParams } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
+import PhotoUpload from "../../../../assets/image/image/foto.png";
 const axios = require("axios");
 
 const ProfileSeller = (props) => {
@@ -19,6 +20,7 @@ const ProfileSeller = (props) => {
     image: "",
     updateAt: new Date(),
   });
+  const history = useHistory();
 
   const params = useParams();
 
@@ -44,6 +46,7 @@ const ProfileSeller = (props) => {
       .put(`${url}products/${params.id}`, products)
       .then(() => {
         console.log("success update data");
+       history.push(`/profile/seller/myproduct`);
       })
       .catch(console.error());
   };
@@ -52,9 +55,9 @@ const ProfileSeller = (props) => {
     <div className="page">
       <Navbar />
       <div className="content-container">
-        <Sidebar show2="show" />
+        <Sidebar show2="show" navproduct="black" navsellingproducts="black" />
         <section>
-          <div className="section-container">
+          <div className="section-container-sellingproduct-update">
             <h1 className="section-title">Inventory</h1>
             <hr size="1px" />
             <h2 className="section-desc">Name of goods</h2>
@@ -68,7 +71,7 @@ const ProfileSeller = (props) => {
             />
           </div>
 
-          <div className="section-container">
+          <div className="section-container-sellingproduct-update">
             <h1 className="section-title">Item details</h1>
             <hr size="1px" />
             <h2 className="section-desc">Unit price</h2>
@@ -117,29 +120,15 @@ const ProfileSeller = (props) => {
               <div className="photo-wrapper">
                 <img
                   className="foto utama"
-                  src="../assets/images/foto.png"
+                  src={PhotoUpload}
                   alt="foto utama"
                 />
-                <img
-                  className="foto"
-                  src="../assets/images/foto.png"
-                  alt="foto"
-                />
-                <img
-                  className="foto"
-                  src="../assets/images/foto.png"
-                  alt="foto"
-                />
-                <img
-                  className="foto"
-                  src="../assets/images/foto.png"
-                  alt="foto"
-                />
-                <img
-                  className="foto"
-                  src="../assets/images/foto.png"
-                  alt="foto"
-                />
+                <div className="photo-preview-wrapper">
+                  <img className="foto" src={PhotoUpload} alt="foto" />
+                  <img className="foto" src={PhotoUpload} alt="foto" />
+                  <img className="foto" src={PhotoUpload} alt="foto" />
+                  <img className="foto" src={PhotoUpload} alt="foto" />
+                </div>
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
@@ -157,7 +146,16 @@ const ProfileSeller = (props) => {
                 apiKey="rildaruegewa87otvjms49g68pepw1sp8nv2e0n5863iw0ie"
                 onInit={(evt, editor) => (editorRef.current = editor)}
                 initialValue={products.description}
-                onChange={(e) => handleForm(e)}
+                onChange={(e) =>
+                  setProducts({
+                    ...products,
+                    description: e.target
+                      .getContent()
+                      .replace(/(&nbsp;)*/g, "")
+                      .replace(/(<p>)*/g, "")
+                      .replace(/<(\/)?p[^>]*>/g, ""),
+                  })
+                }
                 init={{
                   height: 500,
                   menubar: false,

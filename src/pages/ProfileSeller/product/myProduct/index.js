@@ -8,43 +8,69 @@ const axios = require("axios");
 
 const ProfileSeller = (props) => {
   const [products, setProducts] = useState([]);
-
-const history = useHistory()
+  const [pagination, setPagination] = useState("");
+  const [Number, setNumber] = useState(1);
+  const [search, setSearch] = useState("");
+  const [Refresh, setRefresh] = useState(false);
+  
+  const history = useHistory();
 
   const url = "http://localhost:4000/";
 
+ 
+
+  let pageNumbers = [];
+
   useEffect(() => {
     axios
-      .get(`${url}products?npp=5&page=0`)
+      .get(`${url}products?npp=5&page=${Number}${search}`)
       .then((response) => {
         const { result } = response.data.data;
+        const { pagination } = response.data.data;
         setProducts(result);
-        console.log(result);
+        setPagination(pagination);
       })
       .catch(console.error());
-  }, [products]);
+  }, [Refresh]);
 
-  const deleteProductByid =(id)=>{
+  const deleteProductByid = (id) => {
     console.log(id);
     axios
       .delete(`${url}products/${id}`)
       .then(() => {
         console.log("success delete");
+        Refresh === true ? setRefresh(false) : setRefresh(true);
       })
       .catch(console.error());
-  }
-  const updateProductByid =(id)=>{
+  };
+  const updateProductByid = (id) => {
     console.log(history);
-    history.push("/profile/seller/sellingproduct",id)
-    
+    history.push(`/profile/seller/sellingproduct/${id}`);
+  };
+
+  for (let i = 1; i <= pagination.totalPages; i++) {
+    pageNumbers.push(i);
   }
+
+  const btnPagination = (Number) => {
+    setNumber(Number);
+    Refresh===true?setRefresh(false):setRefresh(true)
+  };
+
+     const handleForm = (e) => {
+       setSearch(`&search=${e.target.value}`);
+       Refresh === true ? setRefresh(false) : setRefresh(true);
+     };
+
+     console.log(search);
+
   return (
     <div className="page">
       <Navbar />
       <div className="content-container">
-        <Sidebar show2="show" />
+        <Sidebar show2="show"  navproduct="black" navmyproducts="black"/>
         <section>
-          <div className="section-container">
+          <div className="section-container-myproduct">
             <h1 className="section-title">My product</h1>
 
             <hr size="1px" />
@@ -69,7 +95,7 @@ const history = useHistory()
                 </ul>
               </div>
             </div>
-            <SearchInput />
+            <SearchInput onChange={(e) => handleForm(e)} />
             <div className="container table-myproduct">
               <table class="table">
                 <thead>
@@ -77,7 +103,7 @@ const history = useHistory()
                     <th scope="col">id</th>
                     <th scope="col">Product Name</th>
                     <th scope="col">Price</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -104,6 +130,20 @@ const history = useHistory()
                   ))}
                 </tbody>
               </table>
+              <nav>
+                <ul className="pagination">
+                  {pageNumbers.map((number) => (
+                    <li key={number} className="page-item">
+                      <a
+                        onClick={() => btnPagination(number)}
+                        className="page-link"
+                      >
+                        {number}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </section>

@@ -104,4 +104,14 @@
         margin-left: 40px;
         z-index: 1;
     }
+    .content_slider {
+        position: relative;
+        margin-top: 30px;
+        border-radius: 10px;
+        width: 186px !important;
+        height: 200px !important;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+    }
 }

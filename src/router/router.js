@@ -11,16 +11,24 @@ import ConfirmLoginPassword from "../pages/confirmLoginPassword";
 import Product from "../pages/pageProduct";
 import Category from "../pages/Category";
 import MyBag from "../pages/MyBag";
+import Checkout from "../pages/Checkout";
+import MyAccount from "../pages/ProfileCustommer/myAccount";
+import ShippingAddress from "../pages/ProfileCustommer/shippingAddress";
+import MyOrderCustommer from "../pages/ProfileCustommer/myOrder";
 import StoreProfile from "../pages/ProfileSeller/store/storeProfile";
 import MyProduct from "../pages/ProfileSeller/product/myProduct";
 import SellingProductAdd from "../pages/ProfileSeller/product/SellingProductAdd";
 import SellingProductUpdate from "../pages/ProfileSeller/product/SellingProductUpdate";
+import MyOrderSeller from "../pages/ProfileSeller/order/myOrder";
+import OrderCancel from "../pages/ProfileSeller/order/OrderCancel";
+import Search from "../pages/Search";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/search" component={Search} />
         <Route exact path="/login/Custommer" component={LoginCustommer} />
         <Route exact path="/login/Seller" component={LoginSeller} />
         <Route exact path="/Register/Custommer" component={RegisterCustommer} />
@@ -35,22 +43,40 @@ const Router = () => {
         <Route path="/product/:id" component={Product} />
         <Route path="/category/:id" component={Category} />
         <Route path="/mybag/" component={MyBag} />
+        <Route path="/Checkout/" component={Checkout} />
         <Route
           exact
-          path="/Profile/Seller/storeProfile"
+          path="/Profile/Custommer/MyAccount"
+          component={MyAccount}
+        />
+        <Route
+          exact
+          path="/Profile/Custommer/ShippingAddress"
+          component={ShippingAddress}
+        />
+        <Route
+          exact
+          path="/Profile/Custommer/MyOrder"
+          component={MyOrderCustommer}
+        />
+        <Route
+          exact
+          path="/Profile/Seller/StoreProfile"
           component={StoreProfile}
         />
-        <Route exact path="/Profile/Seller/myProduct" component={MyProduct} />
+        <Route exact path="/Profile/Seller/MyProduct" component={MyProduct} />
         <Route
           exact
-          path="/Profile/Seller/sellingProduct"
+          path="/Profile/Seller/SellingProduct"
           component={SellingProductAdd}
         />
         <Route
           exact
-          path="/Profile/Seller/sellingProduct/:id"
+          path="/Profile/Seller/SellingProduct/:id"
           component={SellingProductUpdate}
         />
+        <Route exact path="/Profile/Seller/MyOrder" component={MyOrderSeller} />
+        <Route exact path="/Profile/Seller/OrderCancel" component={OrderCancel} />
       </Switch>
     </BrowserRouter>
   );

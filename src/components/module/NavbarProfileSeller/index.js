@@ -8,6 +8,8 @@ import { ReactComponent as NotifImage } from "../../../assets/image/logo/bell.sv
 import { ReactComponent as MailImage } from "../../../assets/image/logo/mail.svg";
 import ProfileImage from "../../../assets/image/logo/profile.png";
 import "./style.css";
+import { Link } from "react-router-dom";
+
 export class index extends Component {
   render() {
     return (
@@ -36,7 +38,9 @@ export class index extends Component {
         </div>
         <div className={style.cart_notif_mail_profile}>
           <a href="#" className={style.cart}>
-            <CartImage />
+            <Link to="/mybag">
+              <CartImage />
+            </Link>
           </a>
           <div className={style.notification}>
             <NotifImage />
@@ -45,7 +49,9 @@ export class index extends Component {
             <MailImage />
           </div>
           <a href="#" className={style.profile}>
-            <img src={ProfileImage} />
+            <Link to="/profile/custommer/myaccount">
+              <img src={ProfileImage} />
+            </Link>
           </a>
         </div>
       </nav>

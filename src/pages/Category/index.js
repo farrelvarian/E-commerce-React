@@ -50,7 +50,7 @@ const Category = (props) => {
               to={item.id}
               image={item.image}
               title={item.name}
-              price={`$ ${item.price}.0`}
+              price={`Rp ${item.price}`}
               brand={item.brand}
               rating="(10)"
             />

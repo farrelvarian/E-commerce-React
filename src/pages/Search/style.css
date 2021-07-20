@@ -1,0 +1,13 @@
+    .input-group {
+        width: 300px !important;
+        align-self: flex-end !important;
+        margin-right: 300px !important;
+    }
+    
+    @media (min-width: 320px) and (max-width: 480px) {
+        .input-group {
+            width: 300px !important;
+            align-self: flex-end !important;
+            margin-right: 100px !important;
+        }
+    }

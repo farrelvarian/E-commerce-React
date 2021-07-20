@@ -5,6 +5,7 @@ import LogoPencil from "../../../assets/image/logo/pencil.svg";
 import Store from "../../../assets/image/logo/store.png";
 import Product from "../../../assets/image/logo/product.png";
 import Order from "../../../assets/image/logo/order.png";
+import { Link } from "react-router-dom";
 export class Sidebar extends Component {
   render() {
     return (
@@ -30,6 +31,7 @@ export class Sidebar extends Component {
                   data-target="#collapseOne"
                   aria-expanded="false"
                   aria-controls="collapseOne"
+                  style={{ color: this.props.navstore }}
                 >
                   <img className="sidebar-logo" src={Store} />
                   Store
@@ -43,7 +45,14 @@ export class Sidebar extends Component {
               aria-labelledby="headingOne"
               data-parent="#accordionExample"
             >
-              <div className="card-body sidebar">Store profile</div>
+              <Link to="/profile/seller/storeprofile">
+                <div
+                  className="card-body sidebar"
+                  style={{ color: this.props.navstoreprofile }}
+                >
+                  Store profile
+                </div>
+              </Link>
             </div>
           </div>
           <div className="card card-sidebar">
@@ -56,6 +65,7 @@ export class Sidebar extends Component {
                   data-target="#collapseTwo"
                   aria-expanded="true"
                   aria-controls="collapseTwo"
+                  style={{ color: this.props.navproduct }}
                 >
                   <img className="sidebar-logo" src={Product} />
                   Product
@@ -68,8 +78,22 @@ export class Sidebar extends Component {
               aria-labelledby="headingTwo"
               data-parent="#accordionExample"
             >
-              <div className="card-body sidebar">My products</div>
-              <div className="card-body sidebar">Selling products</div>
+              <Link to="/profile/seller/myproduct">
+                <div
+                  className="card-body sidebar"
+                  style={{ color: this.props.navmyproducts }}
+                >
+                  My products
+                </div>
+              </Link>
+              <Link to="/profile/seller/sellingproduct">
+                <div
+                  className="card-body sidebar"
+                  style={{ color: this.props.navsellingproducts }}
+                >
+                  Selling products
+                </div>
+              </Link>
             </div>
           </div>
           <div className="card card-sidebar">
@@ -82,6 +106,7 @@ export class Sidebar extends Component {
                   data-target="#collapseThree"
                   aria-expanded="true"
                   aria-controls="collapseThree"
+                  style={{ color: this.props.navorder }}
                 >
                   <img className="sidebar-logo" src={Order} />
                   Order
@@ -95,8 +120,23 @@ export class Sidebar extends Component {
               data-parent="#accordionExample"
               aria-expanded="true"
             >
-              <div className="card-body sidebar">My order</div>
-              <div className="card-body sidebar">Order cancel</div>
+              {" "}
+              <Link to="/profile/seller/myorder">
+                <div
+                  className="card-body sidebar"
+                  style={{ color: this.props.navmyorder }}
+                >
+                  My order
+                </div>
+              </Link>{" "}
+              <Link to="/profile/seller/ordercancel">
+                <div
+                  className="card-body sidebar"
+                  style={{ color: this.props.navordercancel }}
+                >
+                  Order cancel
+                </div>{" "}
+              </Link>
             </div>
           </div>
         </div>

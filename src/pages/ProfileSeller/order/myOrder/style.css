@@ -1,0 +1,65 @@
+        .page {
+            background-color: #e5e5e5;
+        }
+        
+        .content-container {
+            display: flex;
+        }
+        
+        .section-container-myorder-seller {
+            height: 636px;
+            width: 850px;
+            margin-top: 50px;
+            margin-left: 45px;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 4px;
+            padding-bottom: 10px;
+        }
+        
+        .section-wrapper {
+            display: flex;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            padding-top: 30px;
+            margin-left: 30px;
+        }
+        
+        .section-desc {
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 6px;
+            margin-left: 30px;
+            color: #9b9b9b;
+        }
+        
+        .nav-tabs-wrapper {
+            margin-left: 25px;
+        }
+        
+        .image-noOrder {
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        @media (min-width: 320px) and (max-width: 480px) {
+            .content-container {
+                display: flex;
+                flex-direction: column;
+            }
+            .section-container-myorder-seller {
+                height: auto;
+                width: 100%;
+                margin-top: 50px;
+                margin-left: 0px;
+                background-color: white;
+                box-sizing: border-box;
+                border-radius: 4px;
+                padding-bottom: 10px;
+            }
+        }

@@ -7,20 +7,29 @@ import Card from "../../components/base/Card";
 const axios = require("axios");
 
 const Home = (props) => {
-  const [products, setProducts] = useState([]);
+  const [dataNew, setNew] = useState([]);
+  const [dataPopular, setPopular] = useState([]);
 
   const url = "http://localhost:4000/";
 
-  useEffect(() => {
-    axios
-      .get(`${url}products`)
-      .then((response) => {
-        const { result } = response.data.data;
-        setProducts(result);
-        console.log(result);
-      })
-      .catch(console.error());
-  }, []);
+    useEffect(() => {
+      axios
+        .get(`${url}products?npp=15&field=createdAt&sort=ASC`)
+        .then((response) => {
+          const { result } = response.data.data;
+          setNew(result);
+          console.log(result);
+        })
+        .catch(console.error());
+         axios
+           .get(`${url}products?npp=15&field=price&sort=ASC`)
+           .then((response) => {
+             const { result } = response.data.data;
+             setPopular(result);
+             console.log(result);
+           })
+           .catch(console.error());
+    }, []);
 
   return (
     <div className={style.container}>
@@ -33,11 +42,12 @@ const Home = (props) => {
       <h3 className={style.text_desc}>You’ve never seen it before!</h3>
       <div className={style.card_container}>
         <div className="row row-cols-2">
-          {products.map((item) => (
+        {dataNew.map((item) => (
             <Card
+              to={item.id}
               image={item.image}
               title={item.name}
-              price={`$ ${item.price}.0`}
+              price={`Rp ${item.price}`}
               brand={item.brand}
               rating="(10)"
             />
@@ -51,12 +61,12 @@ const Home = (props) => {
       </h3>
       <div className={style.card_container}>
         <div className="row row-cols-2">
-          {products.map((item) => (
+          {dataPopular.map((item) => (
             <Card
               to={item.id}
               image={item.image}
               title={item.name}
-              price={`$ ${item.price}.0`}
+              price={`Rp ${item.price}`}
               brand={item.brand}
               rating="(10)"
             />

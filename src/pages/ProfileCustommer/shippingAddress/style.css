@@ -1,0 +1,131 @@
+.page {
+    background-color: #e5e5e5;
+}
+
+.section-container-shippingAddress {
+    height: 636px;
+    width: 850px;
+    margin-top: 50px;
+    margin-left: 45px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.section-title-shippingAddress {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 30px;
+    margin-left: 30px;
+}
+
+.section-desc-shippingAddress {
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 6px;
+    margin-left: 30px;
+    color: #9b9b9b;
+}
+
+.section-name-shippingAddress {
+    display: flex;
+    margin-left: 30px;
+    margin-bottom: 22px;
+    align-items: center;
+}
+
+.text-section-shippingAddress {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9b9b9b;
+    text-align: right;
+    width: 110px;
+    margin-right: 40px;
+}
+
+.btn-add-new-shippingAddress {
+    height: 86px;
+    width: 710px;
+    border: 1px dashed #9b9b9b;
+    font-size: 18px;
+    font-weight: 600;
+    color: #9b9b9b;
+    background-color: white;
+    align-self: center;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+.wrapper-btn-address-shippingAddress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper-address-shippingAddress {
+    height: 170px;
+    width: 710px;
+    border: 1px solid#DB3022;
+    align-self: center;
+    margin-top: 35px;
+    border-radius: 8px;
+}
+
+.text-name-address-shippingAddress {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+.text-detail-address-shippingAddress {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 10px;
+    margin-left: 25px;
+}
+
+.btn-change-address-shippingAddress {
+    font-size: 16px;
+    font-weight: 600;
+    color: #db3022;
+    margin-top: 20px;
+    margin-left: 25px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .section-container-shippingAddress {
+        height: auto;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-bottom: 20px;
+    }
+    .btn-add-new-shippingAddress {
+        height: 86px;
+        width: 90%;
+        border: 1px dashed #9b9b9b;
+        font-size: 18px;
+        font-weight: 600;
+        color: #9b9b9b;
+        background-color: white;
+        align-self: center;
+        margin-top: 30px;
+        border-radius: 8px;
+    }
+    .wrapper-address-shippingAddress {
+        height: auto;
+        width: 90%;
+        border: 1px solid#DB3022;
+        align-self: center;
+        margin-top: 35px;
+        border-radius: 8px;
+    }
+}

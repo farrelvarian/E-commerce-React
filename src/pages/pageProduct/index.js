@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import Navbar from "../../components/module/NavbarAfterLogin";
+import Navbar from "../../components/module/NavbarBeforeLogin";
 import ButtonIncDec from "../../components/base/buttonIncDec";
 import "./style.css";
 import Prev1 from "../../assets/image/page-product/prev1.png";
@@ -65,7 +65,7 @@ const PageProduct = (props) => {
               <p className="rating">(10)</p>
             </div>
             <h4 className="text-product-price">price</h4>
-            <h1 className="text-price">{`$ ${products.price}.0`}</h1>
+            <h1 className="text-price">{`Rp ${products.price}`}</h1>
             <div className="color">
               <h3 className="text-color">Colors</h3>
               <div className="color-wrapper">
@@ -239,7 +239,7 @@ const PageProduct = (props) => {
               to={item.id}
               image={item.image}
               title={item.name}
-              price={`$ ${item.price}.0`}
+              price={`Rp ${item.price}`}
               brand={item.brand}
               rating="(10)"
             />

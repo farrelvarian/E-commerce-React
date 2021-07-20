@@ -6,7 +6,7 @@
     display: flex;
 }
 
-.section-container {
+.section-container-sellingproduct-update {
     height: auto;
     width: 850px;
     margin-top: 50px;
@@ -106,9 +106,18 @@
     margin-top: 40px;
 }
 
+.photo-preview-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    align-items: center;
+    margin-top: 40px;
+}
+
 .foto.utama {
     height: 190px;
     width: 190px;
+    margin-left: 25px
 }
 
 .foto {
@@ -180,4 +189,109 @@
     border: none;
     margin-left: 750px;
     margin-bottom: 70px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .input {
+        height: 48px;
+        width: 350px;
+        text-align: left;
+        padding-left: 20px;
+        margin-left: 30px;
+        margin-bottom: 40px;
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid #9b9b9b;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 1px 8px rgba(0, 0, 0, 0.05));
+        border-radius: 4px;
+    }
+    .section-container-sellingproduct-update {
+        height: auto;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0;
+        margin-bottom: 30px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    .section-container-photo {
+        height: auto;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0;
+        margin-bottom: 30px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-bottom: 40px;
+    }
+    .container-photo {
+        width: 100%;
+        height: auto;
+        border: 1px dashed #d4d4d4;
+        box-sizing: border-box;
+        border-radius: 4px;
+        margin-left: 0;
+    }
+    .section-container-desc {
+        height: auto;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0;
+        margin-bottom: 50px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-bottom: 100px;
+    }
+    .photo-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .photo-preview-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+        margin-top: 40px;
+    }
+    .foto {
+        height: 50px;
+        width: 50px;
+    }
+    .section-desc.photo {
+        display: none
+    }
+    .btn-upload {
+        width: 160px;
+        height: 36px;
+        font-size: 14px;
+        background-color: white;
+        border: 1px solid #9b9b9b;
+        box-sizing: border-box;
+        border-radius: 24px;
+        color: #9b9b9b;
+        cursor: pointer;
+        margin-top: 20px;
+        margin-left: 135px;
+        margin-bottom: 35px;
+    }
+    .btn-jual {
+        width: 160px;
+        height: 36px;
+        background: #db3022;
+        border-radius: 25px;
+        color: white;
+        outline: none;
+        cursor: pointer;
+        border: none;
+        margin-left: 230px;
+        margin-bottom: 70px;
+    }
 }

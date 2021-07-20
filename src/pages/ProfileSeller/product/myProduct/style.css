@@ -6,14 +6,15 @@
     display: flex;
 }
 
-.section-container {
-    height: 636px;
+.section-container-myproduct {
+    height: auto;
     width: 850px;
     margin-top: 50px;
     margin-left: 45px;
     background-color: white;
     box-sizing: border-box;
     border-radius: 4px;
+    padding-bottom: 10px;
 }
 
 .section-wrapper {
@@ -59,4 +60,29 @@
     margin-right: 10px;
     outline: none;
     cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .section-container-myproduct {
+        height: auto;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: 0px;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-bottom: 10px;
+    }
+    .container.table-myproduct {
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        border: 1px solid grey;
+        border-radius: 5px;
+    }
 }

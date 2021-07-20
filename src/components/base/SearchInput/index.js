@@ -11,6 +11,7 @@ export class index extends Component {
           type="search"
           placeholder="Search"
           autocomplete="off"
+          onChange={this.props.onChange}
         />
         <SearchImage className={style.fas} />
       </div>

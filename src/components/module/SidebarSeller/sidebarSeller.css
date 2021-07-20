@@ -13,11 +13,6 @@
     margin-right: 9px;
 }
 
-.sidebar {
-    width: 600px;
-    background-color: #f5f5f5;
-}
-
 .sidebar-image {
     display: flex;
     margin-left: 350px;
@@ -59,8 +54,10 @@
 .collapsed {
     margin-left: 300px;
     width: 200px;
-    color: black;
+    color: #9b9b9b;
     display: flex;
+    font-weight: 500;
+    font-size: 14px
 }
 
 .collapsed:hover {
@@ -72,6 +69,9 @@
     margin-left: 350px;
     width: 200px;
     background-color: transparent;
+    font-weight: 500;
+    font-size: 14px;
+    color: #9b9b9b;
 }
 
 .btn.btn-link:not(:disabled):not(.disabled) {
@@ -82,4 +82,92 @@
 .accordion>.card>.card-header {
     background-color: transparent;
     border: none;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .sidebar-container {
+        width: 100%;
+        min-height: 100px;
+        background-color: #f5f5f5;
+    }
+    .sidebar-image {
+        display: flex;
+        justify-content: center;
+        margin-left: 0px;
+        padding-top: 10px;
+        margin-bottom: 10px;
+    }
+    .profile-seller {
+        border-radius: 50%;
+    }
+    .logo-pencil {
+        float: left;
+        margin-right: 9px;
+    }
+    .sidebar-profile-name {
+        font-size: 16px;
+        font-weight: 600;
+        margin-left: 14px;
+        padding-top: 10px;
+    }
+    .ubah-profile-wrapper {
+        font-size: 14px;
+        font-weight: 500;
+        color: #9b9b9b;
+        margin-left: 14px;
+        margin-top: 4px;
+    }
+    .accordion {
+        background-color: transparent;
+        border: none;
+        display: flex!important;
+    }
+    .card.card-sidebar {
+        background-color: transparent;
+        border: none;
+    }
+    .card img.sidebar-logo {
+        height: auto;
+        margin-right: 30px;
+        object-position: 0px 0%;
+    }
+    .collapsed {
+        margin-left: 10px;
+        width: 200px;
+        color: black;
+        display: flex;
+    }
+    .collapsed:hover {
+        text-decoration: none;
+        color: black;
+    }
+    .card-body.sidebar {
+        margin-left: 0px;
+        width: 200px;
+        background-color: transparent;
+    }
+    .btn.btn-link.btn-block.text-left.collapsed {
+        font-size: 0px;
+    }
+    .btn.btn-link:not(:disabled):not(.disabled) {
+        font-size: 0px;
+        outline: none;
+        box-shadow: none;
+    }
+    .btn.btn-link.btn-block.text-left.collapsed:hover {
+        font-size: 0px;
+        outline: none;
+    }
+    .btn.btn-link.btn-block.text-left.collapsed:active {
+        font-size: 0px;
+        outline: none;
+    }
+    .btn.btn-link:not(:disabled):not(.disabled) {
+        margin-left: 10px;
+        width: 200px;
+    }
+    .accordion>.card>.card-header {
+        background-color: transparent;
+        border: none;
+    }
 }

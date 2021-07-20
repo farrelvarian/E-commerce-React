@@ -5,8 +5,8 @@
 
 .clipme {
     position: absolute;
-    width: 456px !important;
-    height: 180px !important;
+    width: 456px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -43,5 +43,12 @@
         margin-top: 15px;
         margin-left: 40px;
         z-index: 1;
+    }
+    .clipme {
+        position: absolute;
+        width: 414px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
     }
 }
