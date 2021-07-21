@@ -39,24 +39,28 @@ const PageProduct = (props) => {
   }, [id]);
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-pageProduct">
       <Navbar />
-      <div className="container content-product">
+      <div className="container content-pageProduct">
         <div className="main">
-          <div className="image-product">
-            <img className="main-image" src={products.image} alt="main" />
-            <div className="preview-image-wrapper">
-              <img className="preview-image" src={Prev1} alt="1" />
-              <img className="preview-image" src={Prev2} alt="2" />
-              <img className="preview-image" src={Prev3} alt="3" />
-              <img className="preview-image" src={Prev4} alt="4" />
-              <img className="preview-image" src={Prev5} alt="5" />
+          <div className="image-pageProduct">
+            <img
+              className="main-image-pageProduct"
+              src={products.image}
+              alt="main"
+            />
+            <div className="preview-image-wrapper-pageProduct">
+              <img className="preview-image-pageProduct" src={Prev1} alt="1" />
+              <img className="preview-image-pageProduct" src={Prev2} alt="2" />
+              <img className="preview-image-pageProduct" src={Prev3} alt="3" />
+              <img className="preview-image-pageProduct" src={Prev4} alt="4" />
+              <img className="preview-image-pageProduct" src={Prev5} alt="5" />
             </div>
           </div>
           <div className="info">
-            <h1 className="product-title">{products.name}</h1>
-            <h4 className="brand-name">{products.brand}</h4>
-            <div className="star-wrapper">
+            <h1 className="product-title-pageProduct">{products.name}</h1>
+            <h4 className="brand-name-pageProduct">{products.brand}</h4>
+            <div className="star-wrapper-pageProduct">
               <img src={Star} alt="star" />
               <img src={Star} alt="star" />
               <img src={Star} alt="star" />
