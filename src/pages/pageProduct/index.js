@@ -11,6 +11,7 @@ import Prev5 from "../../assets/image/page-product/prev5.png";
 import Star from "../../assets/image/logo/star.svg";
 import Card from "../../components/base/Card";
 import { useParams } from "react-router-dom";
+import { BASE_URL } from "../../configs/configs";
 const axios = require("axios");
 
 const PageProduct = (props) => {
@@ -21,12 +22,10 @@ const PageProduct = (props) => {
   useEffect(async () => {
     try {
       const { data: data1 } = await (
-        await axios.get(`${process.env.REACT_APP_API_URL}products/${id}`)
+        await axios.get(`${BASE_URL}products/${id}`)
       ).data;
       const { data: data2 } = await (
-        await axios.get(
-          `${process.env.REACT_APP_API_URL}products/category/${data1[0].category_id}`
-        )
+        await axios.get(`${BASE_URL}products/category/${data1[0].category_id}`)
       ).data;
       console.log(data1);
       console.log(data2);
