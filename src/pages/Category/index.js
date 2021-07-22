@@ -1,17 +1,17 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import style from "./category.module.css";
 import Navbar from "../../components/module/NavbarAfterLogin";
 import Card from "../../components/base/Card";
 import "./style.css";
 import { useParams } from "react-router-dom";
-import {BASE_URL} from "../../configs/configs"
+import { BASE_URL } from "../../configs/configs";
 const axios = require("axios");
 
 const Category = (props) => {
   const [categories, setCategories] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   let { id } = useParams();
-
 
   useEffect(() => {
     axios
@@ -21,10 +21,10 @@ const Category = (props) => {
         const categoryName = response.data.data[0].category;
         setCategories(result);
         setCategoryName(categoryName);
-        // console.log(result[0].category);
+       
       })
       .catch(console.error());
-  }, );
+  }, []);
 
   return (
     <div className={style.container}>
@@ -42,7 +42,7 @@ const Category = (props) => {
           </li>
         </ol>
       </nav>
-    <h1 className={style.text_title}>  {categoryName} </h1>
+      <h1 className={style.text_title}> {categoryName} </h1>
       <div className={style.card_container}>
         <div className="row row-cols-2">
           {categories.map((item) => (

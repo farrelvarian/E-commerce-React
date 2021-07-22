@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useRef } from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
@@ -34,7 +35,7 @@ const ProfileSeller = () => {
         console.log(result);
       })
       .catch(console.error());
-  }, );
+  }, []);
 
   const handleForm = (e) => {
     setProducts({ ...products, [e.target.name]: e.target.value });

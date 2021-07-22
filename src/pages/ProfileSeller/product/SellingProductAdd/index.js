@@ -1,14 +1,15 @@
-import React, {  useState,useRef } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useRef } from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import "./style.css";
- import { Editor } from "@tinymce/tinymce-react";
-import PhotoUpload from "../../../../assets/image/image/foto.png"
+import { Editor } from "@tinymce/tinymce-react";
+import PhotoUpload from "../../../../assets/image/image/foto.png";
 import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
 const ProfileSeller = () => {
-   const editorRef = useRef(null);
+  const editorRef = useRef(null);
   const [products, setProducts] = useState({
     name: "",
     brand: "",
@@ -30,11 +31,11 @@ const ProfileSeller = () => {
       .then(() => {
         console.log("success add data");
         alert("data berhasil ditambahkan");
-      })
+          })
       .catch(console.error());
-  };
+  }
 
- console.log(products)
+  console.log(products);
 
   return (
     <div className="page">
