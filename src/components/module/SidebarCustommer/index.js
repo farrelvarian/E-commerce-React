@@ -16,19 +16,20 @@ export class Sidebar extends Component {
           <div>
             <h2 className="sidebar-profile-name">Johanes Mikael</h2>
             <h3 className="ubah-profile-wrapper">
-              <img className="logo-pencil" src={LogoPencil} />
+              <img className="logo-pencil" alt="edit" src={LogoPencil} />
               Ubah profile
             </h3>
           </div>
         </div>
         <div className="sidebar-custommer-wrapper">
           <Link to="/profile/custommer/myaccount">
-            <a
-              href="../custommerProfile-myAccount/index.html"
-              className="sidebar-menu-wrapper"
-            >
+            <div className="sidebar-menu-wrapper">
               <div className="sidebar-menu-custommer">
-                <img className="sidebar-logo-custommer" src={MyAccount} />
+                <img
+                  className="sidebar-logo-custommer"
+                  alt="MY Account"
+                  src={MyAccount}
+                />
                 <h3
                   className="sidebar-name-custommer"
                   style={{ color: this.props.show1 }}
@@ -36,15 +37,12 @@ export class Sidebar extends Component {
                   My Account
                 </h3>
               </div>
-            </a>
+            </div>
           </Link>
           <Link to="/profile/custommer/shippingaddress">
-            <a
-              href="../custommerProfile-shippingAddress/index.html"
-              className="sidebar-menu-wrapper"
-            >
+            <div className="sidebar-menu-wrapper">
               <div className="sidebar-menu-custommer">
-                <img className="sidebar-logo-custommer" src={ShoppingAddress} />
+                <img className="sidebar-logo-custommer" alt="shoppingaddress" src={ShoppingAddress} />
                 <h3
                   className="sidebar-name-custommer"
                   style={{ color: this.props.show2 }}
@@ -52,15 +50,12 @@ export class Sidebar extends Component {
                   Shipping Address
                 </h3>
               </div>
-            </a>{" "}
+            </div>{" "}
           </Link>
           <Link to="/profile/custommer/myorder">
-            <a
-              href="../custommerProfile-myOrder/index.html"
-              className="sidebar-menu-wrapper"
-            >
+            <div className="sidebar-menu-wrapper">
               <div className="sidebar-menu-custommer">
-                <img className="sidebar-logo-custommer" src={MyOrder} />
+                <img className="sidebar-logo-custommer" alt="myorder" src={MyOrder} />
                 <h3
                   className="sidebar-name-custommer"
                   style={{ color: this.props.show3 }}
@@ -68,7 +63,7 @@ export class Sidebar extends Component {
                   My Order
                 </h3>
               </div>
-            </a>
+            </div>
           </Link>
         </div>
       </div>

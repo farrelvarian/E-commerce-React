@@ -1,13 +1,13 @@
-import React, { useEffect, useState,useRef } from "react";
+import React, {  useState,useRef } from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import "./style.css";
  import { Editor } from "@tinymce/tinymce-react";
-import { useHistory } from "react-router-dom";
 import PhotoUpload from "../../../../assets/image/image/foto.png"
+import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
-const ProfileSeller = (props) => {
+const ProfileSeller = () => {
    const editorRef = useRef(null);
   const [products, setProducts] = useState({
     name: "",
@@ -20,17 +20,13 @@ const ProfileSeller = (props) => {
     updateAt: new Date(),
   });
 
-  const url = "http://localhost:4000/";
-
- 
-
   const handleForm = (e) => {
     setProducts({ ...products, [e.target.name]: e.target.value });
   };
 
   const addProductByid = () => {
     axios
-      .post(`${url}products/`, products)
+      .post(`${BASE_URL}products/`, products)
       .then(() => {
         console.log("success add data");
         alert("data berhasil ditambahkan");

@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import SliderMain from "../../components/module/sliderMain";
-// import SliderCategory from "../../components/module/sliderCategory";
+import React from "react";
 import Navbar from "../../components/module/NavbarAfterLogin";
-// import Card from "../../components/base/Card";
 import "./style.css";
 import ImageProduct from "../../assets/image/image/item.png"
 import Gopay from "../../assets/image/payment/gopay.png";

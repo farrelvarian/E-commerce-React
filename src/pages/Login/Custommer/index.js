@@ -14,7 +14,10 @@ class LoginCustommer extends Component {
         <ButtonCustommerSeller to="Login" />
         <Input className="email" type="text" placeholder="Email" />
         <Input className="password" type="password" placeholder="Password" />
-        <a href="http://localhost:3000/ResetPassword" className={style.forgot}>
+        <a
+          href={`/ResetPassword`}
+          className={style.forgot}
+        >
           Forgot password?
         </a>
         <PrimaryButton to="" />
@@ -22,7 +25,7 @@ class LoginCustommer extends Component {
           Don't have a Tokopedia account?
           <span>
             <a
-              href="http://localhost:3000/Register/Custommer"
+              href={`/Register/Custommer`}
               className={style.register}
             >
               Register

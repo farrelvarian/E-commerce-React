@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./confirmPassword.module.css";
 import Logo from "../../components/base/Logo";
 import Input from "../../components/base/Input";
@@ -18,7 +18,7 @@ const Confirm = (props) => {
         placeholder="Confirmation New Password"
       />
       <a
-        href="http://localhost:3000/ResetPassword"
+        href={`/ResetPassword`}
         className={style.forgot}
       >
         Forgot password?

@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../../components/module/NavbarAfterLogin";
 import Sidebar from "../../../components/module/SidebarCustommer";
 import "./style.css";
-import Profile from "../../../assets/image/logo/profileBig.svg";
 
 const ProfileCustommer = (props) => {
   return (

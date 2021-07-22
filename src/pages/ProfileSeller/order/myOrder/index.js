@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import SearchInput from "../../../../components/base/SearchInput";
 import "./style.css";
 import NoOrder from "../../../../assets/image/image/no-order.png"
 
-
 const ProfileSeller = (props) => {
-  
-
     
   return (
     <div className="page">
       <Navbar />
       <div className="content-container">
-        <Sidebar show3="show" navorder="black" navmyorder="black"/>
+        <Sidebar show3="show" navorder="black" navmyorder="black" />
         <section>
           <div className="section-container-myorder-seller">
             <h1 className="section-title">My product</h1>
@@ -24,32 +21,32 @@ const ProfileSeller = (props) => {
               <div className="nav-tabs-wrapper">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="/profile/seller/myorder">
                       All item
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myorder">
                       Get paid
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myorder">
                       processed
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myorder">
                       Sent
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myorder">
                       Completed
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/ordercancel">
                       Order Cancel
                     </a>
                   </li>
@@ -58,7 +55,7 @@ const ProfileSeller = (props) => {
             </div>
             <SearchInput />
             <div className="image-noOrder">
-              <img src={NoOrder} />
+              <img src={NoOrder} alt="no-order"/>
             </div>
           </div>
         </section>

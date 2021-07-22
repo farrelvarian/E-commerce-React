@@ -1,30 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import style from "./search.module.css";
 import "./style.css";
-
 import Navbar from "../../components/module/NavbarBeforeLogin";
 import Card from "../../components/base/Card";
-import { useHistory, useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { BASE_URL } from "../../configs/configs";
 const axios = require("axios");
 
 const Home = (props) => {
   const [products, setProducts] = useState([]);
   const [sort, setSort] = useState("field=createdAt&sort=DESC");
-   const [Refresh, setRefresh] = useState(false);
+  const [Refresh, setRefresh] = useState(false);
   const Location = useLocation();
 
   let Search = ``;
- 
+
   if (Location.search !== "") {
     Search = `${Location.search}&`;
   } else {
     Search = ``;
   }
- 
-  const url = "http://localhost:4000/";
 
-  let urlQuery = `${url}products${Search}${sort}`;
-   console.log(urlQuery);
+  let urlQuery = `${BASE_URL}products${Search}${sort}`;
+  console.log(urlQuery);
 
   const handleForm = (e) => {
     setSort(e.target.value);

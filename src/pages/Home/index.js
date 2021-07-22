@@ -4,17 +4,18 @@ import SliderMain from "../../components/module/sliderMain";
 import SliderCategory from "../../components/module/sliderCategory";
 import Navbar from "../../components/module/NavbarBeforeLogin";
 import Card from "../../components/base/Card";
+import { BASE_URL } from "../../configs/configs";
 const axios = require("axios");
 
 const Home = (props) => {
   const [dataNew, setNew] = useState([]);
   const [dataPopular, setPopular] = useState([]);
 
-  const url = "http://localhost:4000/";
+ 
 
     useEffect(() => {
       axios
-        .get(`${url}products?npp=15&field=createdAt&sort=ASC`)
+        .get(`${BASE_URL}products?npp=15&field=createdAt&sort=ASC`)
         .then((response) => {
           const { result } = response.data.data;
           setNew(result);
@@ -22,7 +23,7 @@ const Home = (props) => {
         })
         .catch(console.error());
          axios
-           .get(`${url}products?npp=15&field=price&sort=ASC`)
+           .get(`${BASE_URL}products?npp=15&field=price&sort=ASC`)
            .then((response) => {
              const { result } = response.data.data;
              setPopular(result);

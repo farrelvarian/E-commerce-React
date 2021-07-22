@@ -1,29 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import SearchInput from "../../../../components/base/SearchInput";
 import "./style.css";
 import { useHistory } from "react-router-dom";
+import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
-const ProfileSeller = (props) => {
+const ProfileSeller = () => {
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState("");
   const [Number, setNumber] = useState(1);
   const [search, setSearch] = useState("");
   const [Refresh, setRefresh] = useState(false);
-  
+
   const history = useHistory();
-
-  const url = "http://localhost:4000/";
-
- 
 
   let pageNumbers = [];
 
   useEffect(() => {
     axios
-      .get(`${url}products?npp=5&page=${Number}${search}`)
+      .get(`${BASE_URL}products?npp=5&page=${Number}${search}`)
       .then((response) => {
         const { result } = response.data.data;
         const { pagination } = response.data.data;
@@ -36,7 +34,7 @@ const ProfileSeller = (props) => {
   const deleteProductByid = (id) => {
     console.log(id);
     axios
-      .delete(`${url}products/${id}`)
+      .delete(`${BASE_URL}products/${id}`)
       .then(() => {
         console.log("success delete");
         Refresh === true ? setRefresh(false) : setRefresh(true);
@@ -54,21 +52,21 @@ const ProfileSeller = (props) => {
 
   const btnPagination = (Number) => {
     setNumber(Number);
-    Refresh===true?setRefresh(false):setRefresh(true)
+    Refresh === true ? setRefresh(false) : setRefresh(true);
   };
 
-     const handleForm = (e) => {
-       setSearch(`&search=${e.target.value}`);
-       Refresh === true ? setRefresh(false) : setRefresh(true);
-     };
+  const handleForm = (e) => {
+    setSearch(`&search=${e.target.value}`);
+    Refresh === true ? setRefresh(false) : setRefresh(true);
+  };
 
-     console.log(search);
+  console.log(search);
 
   return (
     <div className="page">
       <Navbar />
       <div className="content-container">
-        <Sidebar show2="show"  navproduct="black" navmyproducts="black"/>
+        <Sidebar show2="show" navproduct="black" navmyproducts="black" />
         <section>
           <div className="section-container-myproduct">
             <h1 className="section-title">My product</h1>
@@ -78,17 +76,17 @@ const ProfileSeller = (props) => {
               <div className="nav-tabs-wrapper">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a class="nav-link active" href="/profile/seller/myproduct">
                       All item
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myproduct">
                       Sold out
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/seller/myproduct">
                       Archived
                     </a>
                   </li>
@@ -134,12 +132,12 @@ const ProfileSeller = (props) => {
                 <ul className="pagination">
                   {pageNumbers.map((number) => (
                     <li key={number} className="page-item">
-                      <a
+                      <button
                         onClick={() => btnPagination(number)}
                         className="page-link"
                       >
                         {number}
-                      </a>
+                      </button>
                     </li>
                   ))}
                 </ul>

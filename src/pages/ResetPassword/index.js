@@ -9,7 +9,7 @@ const Reset = (props) => {
       <Logo />
       <h2 className={style.text_reset}>Reset password</h2>
       <Input className="email" type="text" placeholder="Email" />
-      <a href="http://localhost:3000/ResetPassword" className={style.forgot}>
+      <a href="/ResetPassword" className={style.forgot}>
         Forgot password?
       </a>
       <PrimaryButton to="ConfirmPassword"/>
@@ -17,7 +17,7 @@ const Reset = (props) => {
         Don't have a Tokopedia account?
         <span>
           <a
-            href="http://localhost:3000/Register/Custommer"
+            href="/Register/Custommer"
             className={style.register}
           >
             Register

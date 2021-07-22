@@ -51,19 +51,19 @@ export default class MultipleItems extends Component {
       <div className={style.slider_wrapper}>
         <Slider {...settings}>
           <div className={style.content_slider}>
-            <img src={Image1} className={style.clipme} />
+            <img src={Image1} className={style.clipme} alt="Girls corner" />
             <h4 className={style.img_title}> Girls corner </h4>
           </div>
           <div className={style.content_slider}>
-            <img src={Image2} className={style.clipme} />
+            <img src={Image2} className={style.clipme} alt="Trend in 2020" />
             <h4 className={style.img_title}> Trend in 2020 </h4>
           </div>
           <div className={style.content_slider}>
-            <img src={Image3} className={style.clipme} />
+            <img src={Image3} className={style.clipme} alt="Black edition" />
             <h4 className={style.img_title}> Black edition </h4>
           </div>
           <div className={style.content_slider}>
-            <img src={Image4} className={style.clipme} />
+            <img src={Image4} className={style.clipme} alt="Formal suit" />
             <h4 className={style.img_title}> Formal suit </h4>
           </div>
         </Slider>

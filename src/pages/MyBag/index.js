@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
-// import SliderMain from "../../components/module/sliderMain";
-// import SliderCategory from "../../components/module/sliderCategory";
+import React from "react";
 import Navbar from "../../components/module/NavbarAfterLogin";
-// import Card from "../../components/base/Card";
 import "./style.css";
 import ImageProduct from "../../assets/image/image/item.png"
 
-const MyBag = (props) => {
+const MyBag = () => {
   return (
     <div className="container-page">
       <Navbar />
@@ -24,13 +21,12 @@ const MyBag = (props) => {
               />
             </div>
             <h1 className="text-select" for="select">
-              {" "}
-              Select all items{" "}
+              Select all items
               <span className="text-qty"> (2 items selected)</span>
             </h1>
-            <a className="text-delete" href="#">
+            <h1 className="text-delete" >
               Delete
-            </a>
+            </h1>
           </div>
           <div className="container item-mybag ">
             <div className="select-items">

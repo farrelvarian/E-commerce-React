@@ -14,9 +14,9 @@ export class index extends Component {
   render() {
     return (
       <nav className={style.navbar_container}>
-        <a className={style.logo} href="#">
+        <div className={style.logo} >
           <Logo />
-        </a>
+        </div>
         <div className={style.search_filter}>
           <div className={`${style.input_group} ${style.with_icon}`}>
             <input
@@ -37,22 +37,22 @@ export class index extends Component {
           </button>
         </div>
         <div className={style.cart_notif_mail_profile}>
-          <a href="#" className={style.cart}>
+          <div className={style.cart}>
             <Link to="/mybag">
               <CartImage />
             </Link>
-          </a>
+          </div>
           <div className={style.notification}>
             <NotifImage />
           </div>
           <div className={style.mail}>
             <MailImage />
           </div>
-          <a href="#" className={style.profile}>
+          <div className={style.profile}>
             <Link to="/profile/custommer/myaccount">
-              <img src={ProfileImage} />
+              <img src={ProfileImage} alt="Profile"/>
             </Link>
-          </a>
+          </div>
         </div>
       </nav>
     );

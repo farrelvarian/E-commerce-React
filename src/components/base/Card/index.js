@@ -10,7 +10,7 @@ class Card extends Component {
       <div className="col col-sm-4 col-md-3 col-md-24">
         <div href="#" className="card">
           <Link to={{ pathname: `/product/${this.props.to}` }}>
-            <img src={this.props.image} className="card-img-top" />
+            <img src={this.props.image} className="card-img-top" alt="gambar product"/>
             <div className="card-body">
               <h5 className={style.card_title}>{this.props.title}</h5>
               <p className={style.card_price}>{this.props.price}</p>

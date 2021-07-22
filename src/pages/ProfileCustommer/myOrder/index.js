@@ -2,7 +2,6 @@ import React from "react";
 import Navbar from "../../../components/module/NavbarAfterLogin";
 import Sidebar from "../../../components/module/SidebarCustommer";
 import "./style.css";
-import Profile from "../../../assets/image/logo/profileBig.svg";
 
 const ProfileCustommer = (props) => {
   return (
@@ -18,33 +17,36 @@ const ProfileCustommer = (props) => {
               <div className="nav-tabs-wrapper">
                 <ul class="nav nav-tabs">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">
+                    <a
+                      class="nav-link active"
+                      href="/profile/custommer/myorder"
+                    >
                       All item
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/custommer/myorder">
                       Not yet paid
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/custommer/myorder">
                       Packed
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/custommer/myorder">
                       Sent
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="/profile/custommer/myorder">
                       Completed
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">
-                     orderCancel
+                    <a class="nav-link" href="/profile/custommer/myorder">
+                      orderCancel
                     </a>
                   </li>
                 </ul>

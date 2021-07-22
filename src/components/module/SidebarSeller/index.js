@@ -15,7 +15,7 @@ export class Sidebar extends Component {
           <div>
             <h2 className="sidebar-profile-name">Johanes Mikael</h2>
             <h3 className="ubah-profile-wrapper">
-              <img className="logo-pencil" src={LogoPencil} />
+              <img className="logo-pencil" alt="Ubah Profile" src={LogoPencil} />
               Ubah profile
             </h3>
           </div>
@@ -33,7 +33,7 @@ export class Sidebar extends Component {
                   aria-controls="collapseOne"
                   style={{ color: this.props.navstore }}
                 >
-                  <img className="sidebar-logo" src={Store} />
+                  <img className="sidebar-logo" alt="store" src={Store} />
                   Store
                 </button>
               </h2>
@@ -67,7 +67,7 @@ export class Sidebar extends Component {
                   aria-controls="collapseTwo"
                   style={{ color: this.props.navproduct }}
                 >
-                  <img className="sidebar-logo" src={Product} />
+                  <img className="sidebar-logo" alt="product" src={Product} />
                   Product
                 </button>
               </h2>
@@ -108,7 +108,7 @@ export class Sidebar extends Component {
                   aria-controls="collapseThree"
                   style={{ color: this.props.navorder }}
                 >
-                  <img className="sidebar-logo" src={Order} />
+                  <img className="sidebar-logo" alt="order" src={Order} />
                   Order
                 </button>
               </h2>

@@ -25,9 +25,9 @@ const NavbarBefore = (props) => {
     return (
       <div>
         <nav className={style.navbar_container}>
-          <a className={style.logo} href="#">
+          <div className={style.logo}>
             <Logo />
-          </a>
+          </div>
           <div className={style.search_filter}>
             <div className={`${style.input_group} ${style.with_icon}`}>
               <input
@@ -49,20 +49,20 @@ const NavbarBefore = (props) => {
             </button>
           </div>
           <div className={style.cart_login_signup}>
-            <a href="#" className={style.cart}>
+            <div className={style.cart}>
               <Link to="/mybag">
                 <CartImage />
               </Link>
-            </a>
+            </div>
             <Link to="/login/custommer">
-              <a href="#" className={style.btnLogin}>
+              <div className={style.btnLogin}>
                 Login
-              </a>
+              </div>
             </Link>
              <Link to="/register/custommer">
-            <a href="#" className={style.btnSignup}>
+            <div className={style.btnSignup}>
               Signup
-            </a></Link>
+            </div></Link>
           </div>
         </nav>
         {/* <!-- Modal filter --> */}

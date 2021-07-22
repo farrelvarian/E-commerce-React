@@ -5,9 +5,10 @@ import "./style.css";
 import { useHistory, useParams } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
 import PhotoUpload from "../../../../assets/image/image/foto.png";
+import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
-const ProfileSeller = (props) => {
+const ProfileSeller = () => {
   const editorRef = useRef(null);
 
   const [products, setProducts] = useState({
@@ -24,18 +25,16 @@ const ProfileSeller = (props) => {
 
   const params = useParams();
 
-  const url = "http://localhost:4000/";
-
   useEffect(() => {
     axios
-      .get(`${url}products/${params.id}`)
+      .get(`${BASE_URL}products/${params.id}`)
       .then((response) => {
         const [result] = response.data.data;
         setProducts(result);
         console.log(result);
       })
       .catch(console.error());
-  }, []);
+  }, );
 
   const handleForm = (e) => {
     setProducts({ ...products, [e.target.name]: e.target.value });
@@ -43,10 +42,10 @@ const ProfileSeller = (props) => {
 
   const updateProductByid = () => {
     axios
-      .put(`${url}products/${params.id}`, products)
+      .put(`${BASE_URL}products/${params.id}`, products)
       .then(() => {
         console.log("success update data");
-       history.push(`/profile/seller/myproduct`);
+        history.push(`/profile/seller/myproduct`);
       })
       .catch(console.error());
   };

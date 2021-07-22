@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-
 import Navbar from "../../components/module/NavbarBeforeLogin";
 import ButtonIncDec from "../../components/base/buttonIncDec";
 import "./style.css";
@@ -18,15 +18,15 @@ const PageProduct = (props) => {
   const [products, setProducts] = useState({});
   const [categories, setCategories] = useState([]);
 
-  const url = "http://localhost:4000/";
-
   useEffect(async () => {
     try {
       const { data: data1 } = await (
-        await axios.get(`${url}products/${id}`)
+        await axios.get(`${process.env.REACT_APP_API_URL}products/${id}`)
       ).data;
       const { data: data2 } = await (
-        await axios.get(`${url}products/category/${data1[0].category_id}`)
+        await axios.get(
+          `${process.env.REACT_APP_API_URL}products/category/${data1[0].category_id}`
+        )
       ).data;
       console.log(data1);
       console.log(data2);
@@ -117,18 +117,10 @@ const PageProduct = (props) => {
                 <button type="button " className="btn btn-chat">
                   Chat
                 </button>
-                <a
-                  href="../myBag/index.html"
-                  type="button "
-                  className="btn btn-addBag"
-                >
+                <a href="/MyBag" type="button " className="btn btn-addBag">
                   Add bag
                 </a>
-                <a
-                  href="../checkout/index.html"
-                  type="button "
-                  className="btn btn-buyNow"
-                >
+                <a href="/Checkout" type="button " className="btn btn-buyNow">
                   Buy Now
                 </a>
               </div>

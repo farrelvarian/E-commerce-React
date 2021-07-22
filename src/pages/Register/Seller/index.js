@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./RegisterSeller.module.css";
 import Logo from "../../../components/base/Logo";
 import ButtonSellerCustommer from "../../../components/base/ButtonSellerCustommer";
 import Input from "../../../components/base/Input";
 import PrimaryButton from "../../../components/base/PrimaryButton";
-const RegisterSeller = (props) => {
+const RegisterSeller = () => {
   return (
     <div className={style.wrapper_content}>
       <Logo />
@@ -19,7 +19,7 @@ const RegisterSeller = (props) => {
       <p className={style.account}>
         Already have a Tokopedia account?
         <span>
-          <a href="http://localhost:3000/Login/Seller" className={style.login}>
+          <a href="/Login/Seller" className={style.login}>
             Login
           </a>
         </span>

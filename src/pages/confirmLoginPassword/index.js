@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import style from "./confirmLoginPassword.module.css";
 import Logo from "../../components/base/Logo";
 import Input from "../../components/base/Input";
 import PrimaryButton from "../../components/base/PrimaryButton";
-const LoginConfirm = (props) => {
+const LoginConfirm = () => {
   return (
     <div className={style.wrapper_content}>
       <Logo />
@@ -14,7 +14,7 @@ const LoginConfirm = (props) => {
       </h3>
       <Input className="email" type="text" placeholder="Email" />
       <Input className="password" type="password" placeholder="Password" />
-      <a href="http://localhost:3000/ResetPassword" className={style.forgot}>
+      <a href={`/ResetPassword`} className={style.forgot}>
         Forgot password?
       </a>
       <PrimaryButton to=""/>

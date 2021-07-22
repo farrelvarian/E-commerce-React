@@ -69,97 +69,97 @@ export default class MultipleItems extends Component {
         <Slider {...settings}>
           <Link to={{ pathname: `/category/1` }}>
             <div className={`${style.content_slider} ${style.slider1}`}>
-              <img src={Image1} className={style.clipme} />
+              <img src={Image1} className={style.clipme} alt="T-Shirt" />
               <h4 className={style.img_title}> T-Shirt </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/2` }}>
             <div className={`${style.content_slider} ${style.slider2}`}>
-              <img src={Image2} className={style.clipme} />
+              <img src={Image2} className={style.clipme} alt="Shorts" />
               <h4 className={style.img_title}> Shorts </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/3` }}>
             <div className={`${style.content_slider} ${style.slider3}`}>
-              <img src={Image3} className={style.clipme} />
+              <img src={Image3} className={style.clipme} alt="Jacket" />
               <h4 className={style.img_title}> Jacket </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/4` }}>
             <div className={`${style.content_slider} ${style.slider4}`}>
-              <img src={Image4} className={style.clipme} />
+              <img src={Image4} className={style.clipme} alt="Pants" />
               <h4 className={style.img_title}> Pants </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/5` }}>
             <div className={`${style.content_slider} ${style.slider5}`}>
-              <img src={Image5} className={style.clipme} />
+              <img src={Image5} className={style.clipme} alt="Shoes" />
               <h4 className={style.img_title}> Shoes </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/6` }}>
             <div className={`${style.content_slider} ${style.slider6}`}>
-              <img src={Image6} className={style.clipme} />
+              <img src={Image6} className={style.clipme} alt="High heels" />
               <h4 className={style.img_title}> High heels </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/7` }}>
             <div className={`${style.content_slider} ${style.slider7}`}>
-              <img src={Image7} className={style.clipme} />
+              <img src={Image7} className={style.clipme} alt="Wristwatch" />
               <h4 className={style.img_title}> Wristwatch </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/8` }}>
             <div className={`${style.content_slider} ${style.slider8}`}>
-              <img src={Image8} className={style.clipme} />
+              <img src={Image8} className={style.clipme} alt="Handbag" />
               <h4 className={style.img_title}> Handbag </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/9` }}>
             <div className={`${style.content_slider} ${style.slider9}`}>
-              <img src={Image9} className={style.clipme} />
+              <img src={Image9} className={style.clipme} alt="Bagback" />
               <h4 className={style.img_title}> Bagback </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/10` }}>
             <div className={`${style.content_slider} ${style.slider10}`}>
-              <img src={Image10} className={style.clipme} />
+              <img src={Image10} className={style.clipme} alt="Socks" />
               <h4 className={style.img_title}> Socks </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/11` }}>
             <div className={`${style.content_slider} ${style.slider11}`}>
-              <img src={Image11} className={style.clipme} />
+              <img src={Image11} className={style.clipme} alt="Glasses" />
               <h4 className={style.img_title}> Glasses </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/12` }}>
             <div className={`${style.content_slider} ${style.slider12}`}>
-              <img src={Image12} className={style.clipme} />
+              <img src={Image12} className={style.clipme} alt="Cap" />
               <h4 className={style.img_title}> Cap </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/13` }}>
             <div className={`${style.content_slider} ${style.slider13}`}>
-              <img src={Image13} className={style.clipme} />
+              <img src={Image13} className={style.clipme} alt="Tie" />
               <h4 className={style.img_title}> Tie </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/14` }}>
             <div className={`${style.content_slider} ${style.slider14}`}>
-              <img src={Image14} className={style.clipme} />
+              <img src={Image14} className={style.clipme} alt="Dress" />
               <h4 className={style.img_title}> Dress </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/15` }}>
             <div className={`${style.content_slider} ${style.slider15}`}>
-              <img src={Image15} className={style.clipme} />
+              <img src={Image15} className={style.clipme} alt="Formal suit" />
               <h4 className={style.img_title}> Formal suit </h4>
             </div>
           </Link>
           <Link to={{ pathname: `/category/16` }}>
             <div className={`${style.content_slider} ${style.slider16}`}>
-              <img src={Image16} className={style.clipme} />
+              <img src={Image16} className={style.clipme} alt="Accessories" />
               <h4 className={style.img_title}> Accessories </h4>
             </div>
           </Link>

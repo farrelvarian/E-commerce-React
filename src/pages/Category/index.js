@@ -4,6 +4,7 @@ import Navbar from "../../components/module/NavbarAfterLogin";
 import Card from "../../components/base/Card";
 import "./style.css";
 import { useParams } from "react-router-dom";
+import {BASE_URL} from "../../configs/configs"
 const axios = require("axios");
 
 const Category = (props) => {
@@ -11,20 +12,19 @@ const Category = (props) => {
   const [categoryName, setCategoryName] = useState("");
   let { id } = useParams();
 
-  const url = "http://localhost:4000/";
 
   useEffect(() => {
     axios
-      .get(`${url}products/category/${id}`)
+      .get(`${BASE_URL}products/category/${id}`)
       .then((response) => {
         const result = response.data.data;
-        const categoryName = response.data.data[0].category
-         setCategories(result);
-         setCategoryName(categoryName)
+        const categoryName = response.data.data[0].category;
+        setCategories(result);
+        setCategoryName(categoryName);
         // console.log(result[0].category);
       })
       .catch(console.error());
-  }, []);
+  }, );
 
   return (
     <div className={style.container}>
@@ -32,10 +32,10 @@ const Category = (props) => {
       <nav className="breadcrumb" aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <a href="#">Home</a>
+            <a href="/Home">Home</a>
           </li>
           <li className="breadcrumb-item">
-            <a href="#">Category</a>
+            <a href="/Category">Category</a>
           </li>
           <li className="breadcrumb-item active" aria-current="page">
             {categoryName}
