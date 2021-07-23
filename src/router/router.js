@@ -28,9 +28,9 @@ const Router = () => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/search" component={Search} />
-        <Route exact path="/login/Custommer" component={LoginCustommer} />
-        <Route exact path="/login/Seller" component={LoginSeller} />
+        <Route exact path="/Search" component={Search} />
+        <Route exact path="/Login/Custommer" component={LoginCustommer} />
+        <Route exact path="/Login/Seller" component={LoginSeller} />
         <Route exact path="/Register/Custommer" component={RegisterCustommer} />
         <Route exact path="/Register/Seller" component={RegisterSeller} />
         <Route exact path="/ResetPassword" component={ResetPassword} />
@@ -40,9 +40,9 @@ const Router = () => {
           path="/ConfirmPassword/Login"
           component={ConfirmLoginPassword}
         />
-        <Route path="/product/:id" component={Product} />
-        <Route path="/category/:id" component={Category} />
-        <Route path="/mybag/" component={MyBag} />
+        <Route path="/Product/:id" component={Product} />
+        <Route path="/Category/:id" component={Category} />
+        <Route path="/MyBag/" component={MyBag} />
         <Route path="/Checkout/" component={Checkout} />
         <Route
           exact
@@ -76,7 +76,11 @@ const Router = () => {
           component={SellingProductUpdate}
         />
         <Route exact path="/Profile/Seller/MyOrder" component={MyOrderSeller} />
-        <Route exact path="/Profile/Seller/OrderCancel" component={OrderCancel} />
+        <Route
+          exact
+          path="/Profile/Seller/OrderCancel"
+          component={OrderCancel}
+        />
       </Switch>
     </BrowserRouter>
   );
