@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import style from "./category.module.css";
-import Navbar from "../../components/module/NavbarAfterLogin";
+// import Navbar from "../../components/module/NavbarAfterLogin";
 import Card from "../../components/base/Card";
 import "./style.css";
 import { useParams } from "react-router-dom";
@@ -28,7 +28,7 @@ const Category = (props) => {
 
   return (
     <div className={style.container}>
-      <Navbar />
+      {/* <Navbar /> */}
       <nav className="breadcrumb" aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">

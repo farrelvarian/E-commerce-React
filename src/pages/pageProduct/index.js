@@ -45,7 +45,7 @@ const PageProduct = (props) => {
           <div className="image-pageProduct">
             <img
               className="main-image-pageProduct"
-              src={products.image}
+              src={products.image1}
               alt="main"
             />
             <div className="preview-image-wrapper-pageProduct">
@@ -232,7 +232,7 @@ const PageProduct = (props) => {
           {categories.map((item) => (
             <Card
               to={item.id}
-              image={item.image}
+              image={item.image1}
               title={item.name}
               price={`Rp ${item.price}`}
               brand={item.brand}

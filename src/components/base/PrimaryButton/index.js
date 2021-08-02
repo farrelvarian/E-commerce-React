@@ -5,7 +5,11 @@ import { Link } from "react-router-dom";
 export class index extends Component {
   render() {
     return (
-      <Link className={style.logo} to={`/${this.props.to}`}>
+      <Link
+        className={style.logo}
+        
+        onClick={this.props.onClick}
+      >
         <button className={style.btn_primary}>PRIMARY</button>
       </Link>
     );

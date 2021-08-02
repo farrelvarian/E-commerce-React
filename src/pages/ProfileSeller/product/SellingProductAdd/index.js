@@ -9,7 +9,10 @@ import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
 const ProfileSeller = () => {
+  const token  = localStorage.getItem("token")
+
   const editorRef = useRef(null);
+  
   const [products, setProducts] = useState({
     name: "",
     brand: "",
@@ -17,21 +20,41 @@ const ProfileSeller = () => {
     description: "",
     category_id: 25,
     category: "No Category",
-    image: "",
     updateAt: new Date(),
   });
+  const [selectedFile, setSelectedFile] = useState([]);
 
   const handleForm = (e) => {
     setProducts({ ...products, [e.target.name]: e.target.value });
   };
 
+  const onFileChange = (e) => {return setSelectedFile([...e.target.files]);}
+
   const addProductByid = () => {
+    
+      const formData = new FormData();
+      formData.append("name",products.name);
+      formData.append("brand", products.brand);
+      formData.append("price", products.price);
+      formData.append("description", products.description);
+      formData.append("category_id", products.category_id);
+      formData.append("category", products.category);
+      formData.append("updateAt", products.updateAt);
+      for (let i = 0 ; i<selectedFile.length;i++){
+        formData.append("images",selectedFile[i]);
+      }
+      
+      console.log(selectedFile);
     axios
-      .post(`${BASE_URL}products/`, products)
+      .post(`${BASE_URL}products/`, formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then(() => {
         console.log("success add data");
         alert("data berhasil ditambahkan");
-          })
+      })
       .catch(console.error());
   }
 
@@ -115,9 +138,13 @@ const ProfileSeller = () => {
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
-              <button type="button" className="btn btn-upload">
-                Upload foto
-              </button>
+              <input
+              multiple
+                type="file"
+                className="btn btn-upload"
+                // value={selectedFile}
+                onChange={(e) => onFileChange(e)}
+              />
             </div>
           </div>
           <div className="section-container-desc">

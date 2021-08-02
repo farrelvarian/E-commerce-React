@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import style from "./search.module.css";
 import "./style.css";
-import Navbar from "../../components/module/NavbarBeforeLogin";
+// import Navbar from "../../components/module/NavbarBeforeLogin";
 import Card from "../../components/base/Card";
 import { useLocation } from "react-router-dom";
 import { BASE_URL } from "../../configs/configs";
@@ -43,7 +43,7 @@ const Home = (props) => {
 
   return (
     <div className={style.container}>
-      <Navbar />
+      {/* <Navbar /> */}
       <h1 className={style.text_title}>Search</h1>
       <h3 className={style.text_desc}>You’ve never seen it before!</h3>
       <div class="input-group mb-3">

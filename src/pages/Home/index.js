@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./home.module.css";
 import SliderMain from "../../components/module/sliderMain";
 import SliderCategory from "../../components/module/sliderCategory";
-import Navbar from "../../components/module/NavbarBeforeLogin";
+// import Navbar from "../../components/module/NavbarBeforeLogin";
 import Card from "../../components/base/Card";
 import { BASE_URL } from "../../configs/configs";
 const axios = require("axios");
@@ -10,8 +10,6 @@ const axios = require("axios");
 const Home = (props) => {
   const [dataNew, setNew] = useState([]);
   const [dataPopular, setPopular] = useState([]);
-
- 
 
     useEffect(() => {
       axios
@@ -34,7 +32,7 @@ const Home = (props) => {
 
   return (
     <div className={style.container}>
-      <Navbar />
+      {/* <Navbar /> */}
       <SliderMain />
       <h1 className={style.text_title}>Category</h1>
       <h3 className={style.text_desc}>What are you currently looking for</h3>
@@ -46,7 +44,7 @@ const Home = (props) => {
         {dataNew.map((item) => (
             <Card
               to={item.id}
-              image={item.image}
+              image={item.image1}
               title={item.name}
               price={`Rp ${item.price}`}
               brand={item.brand}
@@ -65,7 +63,7 @@ const Home = (props) => {
           {dataPopular.map((item) => (
             <Card
               to={item.id}
-              image={item.image}
+              image={item.image1}
               title={item.name}
               price={`Rp ${item.price}`}
               brand={item.brand}

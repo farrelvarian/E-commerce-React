@@ -10,6 +10,8 @@ import { BASE_URL } from "../../../../configs/configs";
 const axios = require("axios");
 
 const ProfileSeller = () => {
+  const token = localStorage.getItem("token");
+
   const editorRef = useRef(null);
 
   const [products, setProducts] = useState({
@@ -19,16 +21,25 @@ const ProfileSeller = () => {
     description: "",
     category_id: 0,
     category: "",
-    image: "",
+    image_id: "",
+    image1: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
     updateAt: new Date(),
   });
+  
   const history = useHistory();
 
   const params = useParams();
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}products/${params.id}`)
+      .get(`${BASE_URL}products/${params.id}`,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },})
       .then((response) => {
         const [result] = response.data.data;
         setProducts(result);
@@ -132,9 +143,9 @@ const ProfileSeller = () => {
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
-              <button type="button" className="btn btn-upload">
+              <input type="file" className="btn btn-upload">
                 Upload foto
-              </button>
+              </input>
             </div>
           </div>
           <div className="section-container-desc">
