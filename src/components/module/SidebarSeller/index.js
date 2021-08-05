@@ -1,19 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./sidebarSeller.css";
-import ProfileSeller from "../../../assets/image/logo/profileBig.svg";
+// import ProfileSeller from "../../../assets/image/logo/profileBig.svg";
 import LogoPencil from "../../../assets/image/logo/pencil.svg";
 import Store from "../../../assets/image/logo/store.png";
 import Product from "../../../assets/image/logo/product.png";
 import Order from "../../../assets/image/logo/order.png";
 import { Link } from "react-router-dom";
-export class Sidebar extends Component {
-  render() {
+
+const sidebarSeller = (props) => {
+ const name = localStorage.getItem("name");
+ const image = localStorage.getItem("image");
     return (
       <div className="sidebar-container">
         <div class="sidebar-image">
-          <img className="profile-seller" src={ProfileSeller} alt="profile" />
+          <img className="sidebar-profile-seller" src={image} alt="profile" />
           <div>
-            <h2 className="sidebar-profile-name">Johanes Mikael</h2>
+            <h2 className="sidebar-profile-name">{name}</h2>
             <h3 className="ubah-profile-wrapper">
               <img className="logo-pencil" alt="Ubah Profile" src={LogoPencil} />
               Ubah profile
@@ -31,7 +33,7 @@ export class Sidebar extends Component {
                   data-target="#collapseOne"
                   aria-expanded="false"
                   aria-controls="collapseOne"
-                  style={{ color: this.props.navstore }}
+                  style={{ color: props.navstore }}
                 >
                   <img className="sidebar-logo" alt="store" src={Store} />
                   Store
@@ -41,14 +43,14 @@ export class Sidebar extends Component {
 
             <div
               id="collapseOne"
-              className={`collapse ${this.props.show1}`}
+              className={`collapse ${props.show1}`}
               aria-labelledby="headingOne"
               data-parent="#accordionExample"
             >
               <Link to="/profile/seller/storeprofile">
                 <div
                   className="card-body sidebar"
-                  style={{ color: this.props.navstoreprofile }}
+                  style={{ color: props.navstoreprofile }}
                 >
                   Store profile
                 </div>
@@ -65,7 +67,7 @@ export class Sidebar extends Component {
                   data-target="#collapseTwo"
                   aria-expanded="true"
                   aria-controls="collapseTwo"
-                  style={{ color: this.props.navproduct }}
+                  style={{ color: props.navproduct }}
                 >
                   <img className="sidebar-logo" alt="product" src={Product} />
                   Product
@@ -74,14 +76,14 @@ export class Sidebar extends Component {
             </div>
             <div
               id="collapseTwo"
-              className={`collapse ${this.props.show2}`}
+              className={`collapse ${props.show2}`}
               aria-labelledby="headingTwo"
               data-parent="#accordionExample"
             >
               <Link to="/profile/seller/myproduct">
                 <div
                   className="card-body sidebar"
-                  style={{ color: this.props.navmyproducts }}
+                  style={{ color: props.navmyproducts }}
                 >
                   My products
                 </div>
@@ -89,7 +91,7 @@ export class Sidebar extends Component {
               <Link to="/profile/seller/sellingproduct">
                 <div
                   className="card-body sidebar"
-                  style={{ color: this.props.navsellingproducts }}
+                  style={{ color: props.navsellingproducts }}
                 >
                   Selling products
                 </div>
@@ -106,7 +108,7 @@ export class Sidebar extends Component {
                   data-target="#collapseThree"
                   aria-expanded="true"
                   aria-controls="collapseThree"
-                  style={{ color: this.props.navorder }}
+                  style={{ color: props.navorder }}
                 >
                   <img className="sidebar-logo" alt="order" src={Order} />
                   Order
@@ -115,7 +117,7 @@ export class Sidebar extends Component {
             </div>
             <div
               id="collapseThree"
-              className={`collapse ${this.props.show3}`}
+              className={`collapse ${props.show3}`}
               aria-labelledby="headingThree"
               data-parent="#accordionExample"
               aria-expanded="true"
@@ -124,7 +126,7 @@ export class Sidebar extends Component {
               <Link to="/profile/seller/myorder">
                 <div
                   className="card-body sidebar"
-                  style={{ color: this.props.navmyorder }}
+                  style={{ color: props.navmyorder }}
                 >
                   My order
                 </div>
@@ -132,7 +134,7 @@ export class Sidebar extends Component {
               <Link to="/profile/seller/ordercancel">
                 <div
                   className="card-body sidebar"
-                  style={{ color: this.props.navordercancel }}
+                  style={{ color: props.navordercancel }}
                 >
                   Order cancel
                 </div>{" "}
@@ -143,6 +145,6 @@ export class Sidebar extends Component {
       </div>
     );
   }
-}
 
-export default Sidebar;
+
+export default sidebarSeller;

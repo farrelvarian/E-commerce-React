@@ -6,14 +6,18 @@ import SearchInput from "../../../../components/base/SearchInput";
 import "./style.css";
 import { useHistory } from "react-router-dom";
 import { BASE_URL } from "../../../../configs/configs";
+import { useDispatch } from "react-redux";
+import { myProduct } from "../../../../configs/redux/actions/productAction";
 const axios = require("axios");
 
 const ProfileSeller = () => {
+    const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
   const [pagination, setPagination] = useState("");
   const [Number, setNumber] = useState(1);
   const [search, setSearch] = useState("");
   const [Refresh, setRefresh] = useState(false);
+  // const token = localStorage.getItem("token");
 
   const history = useHistory();
 
@@ -32,17 +36,20 @@ const ProfileSeller = () => {
   }, [Refresh]);
 
   const deleteProductByid = (id) => {
-    console.log(id);
-    axios
-      .delete(`${BASE_URL}products/${id}`)
-      .then(() => {
-        console.log("success delete");
-        Refresh === true ? setRefresh(false) : setRefresh(true);
-      })
-      .catch(console.error());
+ dispatch(myProduct(id, Refresh,setRefresh));
+    // axios
+    //   .delete(`${BASE_URL}products/${id}`, {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   })
+    //   .then(() => {
+    //     console.log("success delete");
+    //     Refresh === true ? setRefresh(false) : setRefresh(true);
+    //   })
+    //   .catch(console.error());
   };
   const updateProductByid = (id) => {
-    console.log(history);
     history.push(`/profile/seller/sellingproduct/${id}`);
   };
 
@@ -60,7 +67,6 @@ const ProfileSeller = () => {
     Refresh === true ? setRefresh(false) : setRefresh(true);
   };
 
-  console.log(search);
 
   return (
     <div className="page">
@@ -119,7 +125,11 @@ const ProfileSeller = () => {
                         </button>
                         <button
                           className="btn-update-delete"
-                          onClick={() => deleteProductByid(item.id)}
+                          onClick={() => {
+                            if (window.confirm("Delete the item?")) {
+                              deleteProductByid(item.id);
+                            }
+                          }}
                         >
                           Delete
                         </button>

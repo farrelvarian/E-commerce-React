@@ -1,12 +1,17 @@
 import React from "react";
 import Navbar from "../../components/module/NavbarAfterLogin";
 import "./style.css";
-import ImageProduct from "../../assets/image/image/item.png"
+// import ImageProduct from "../../assets/image/image/item.png"
 import Gopay from "../../assets/image/payment/gopay.png";
 import Mastercard from "../../assets/image/payment/mastercard.png";
 import PosIndonesia from "../../assets/image/payment/pos.png";
-
+import CardBox from "../../components/base/CardBox";
+import { useSelector } from "react-redux";
 const Checkout = (props) => {
+   const { product, totalPrice } = useSelector((state) => state.order);
+   const summaryPrice=totalPrice+5000
+    const name = localStorage.getItem("name");
+     const address = localStorage.getItem("address");
   return (
     <div>
       <div className="container-page">
@@ -16,11 +21,9 @@ const Checkout = (props) => {
             <h1 className="title">Checkout</h1>
             <h1 className="detail">Shipping Address</h1>
             <div className="container address">
-              <h1 className="text-name">Andreas Jane</h1>
+              <h1 className="text-name">{name}</h1>
               <h2 className="text-address">
-                Perumahan Sapphire Mediterania, Wiradadi, Kec. Sokaraja,
-                Kabupaten Banyumas, Jawa Tengah, 53181 [Tokopedia Note: blok c
-                16] Sokaraja, Kab. Banyumas, 53181
+               {address}
               </h2>
               <button
                 className="btnAddress"
@@ -30,34 +33,28 @@ const Checkout = (props) => {
                 Choose another address
               </button>
             </div>
-            <div className="container item-checkout">
-              <img className="image-checkout" src={ImageProduct} alt="suit" />
-              <h1 className="name-product">
-                Men's formal suit - Black <br />
-                <span className="brand">Zalora Cloth</span>
-              </h1>
-              <h1 className="price">$ 20.0</h1>
-            </div>
-            <div className="container item-checkout">
-              <img className="image-checkout" src={ImageProduct} alt="jacket" />
-              <h1 className="name-product">
-                Men's Jacket jeans <br />
-                <span className="brand">Zalora Cloth</span>
-              </h1>
-              <h1 className="price">$ 20.0</h1>
-            </div>
+            {product.map((item) => (
+              <CardBox
+                name={item.name}
+                brand={item.brand}
+                image={item.image1}
+                price={item.price}
+                type="checkout"
+              />
+            ))}
           </div>
           <div className="container shopping-checkout">
             <h1 className="shopping-summary">Shopping summary</h1>
             <h1 className="text-order">
-              Order<span className="text-price-order">$ 40.0</span>
+              Order<span className="text-price-order">Rp. {totalPrice}</span>
             </h1>
             <h1 className="text-delivery">
-              Delivery<span className="text-price-delivery">$ 5.0</span>
+              Delivery<span className="text-price-delivery">Rp. 5000</span>
             </h1>
             <hr size="1px" width="100%" />
             <h1 className="shopping-summary">
-              Shopping summary<span className="text-price-summary">$ 45.0</span>
+              Shopping summary
+              <span className="text-price-summary">Rp. {summaryPrice}</span>
             </h1>
             <button
               className="btnSelectPayment"
@@ -162,16 +159,19 @@ const Checkout = (props) => {
                 <hr width="100% " />
                 <h2 className="text-shopping-summary ">Shopping summary</h2>
                 <h2 className="text-summary-modal">
-                  Order<span className="text-summary-price">$ 40.0</span>
+                  Order
+                  <span className="text-summary-price">Rp. {totalPrice}</span>
                 </h2>
                 <h2 className="text-summary-modal">
-                  Delivery<span className="text-summary-price">$ 5.0</span>
+                  Delivery<span className="text-summary-price">Rp. 5000</span>
                 </h2>
               </div>
               <div className="modal-footer payment">
                 <div>
                   <h2 className="text-summary-footer">Shopping summary</h2>
-                  <h2 className="text-summary-price-footer">$ 45.0</h2>
+                  <h2 className="text-summary-price-footer">
+                    Rp. {summaryPrice}
+                  </h2>
                 </div>
                 <button type="button " className="btn btn-buy ">
                   Buy

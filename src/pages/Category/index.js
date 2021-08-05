@@ -48,7 +48,7 @@ const Category = (props) => {
           {categories.map((item) => (
             <Card
               to={item.id}
-              image={item.image}
+              image={item.image1}
               title={item.name}
               price={`Rp ${item.price}`}
               brand={item.brand}

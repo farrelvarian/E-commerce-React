@@ -1,20 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import "./sidebarCustommer.css";
-import ProfileSeller from "../../../assets/image/logo/profileBig.svg";
+// import ProfileSeller from "../../../assets/image/logo/profileBig.svg";
 import LogoPencil from "../../../assets/image/logo/pencil.svg";
 import MyAccount from "../../../assets/image/logo/myAccount.png";
 import ShoppingAddress from "../../../assets/image/logo/shoppingAddress.png";
 import MyOrder from "../../../assets/image/logo/myOrder.png";
 import { Link } from "react-router-dom";
 
-export class Sidebar extends Component {
-  render() {
+const sidebarCustommer = (props) => {
+ const name = localStorage.getItem("name");
+ const image = localStorage.getItem("image");
     return (
       <div className="sidebar-container">
         <div class="sidebar-image">
-          <img className="profile-seller" src={ProfileSeller} alt="profile" />
+          <img className="sidebar-profile-custommer" src={image} alt="profile" />
           <div>
-            <h2 className="sidebar-profile-name">Johanes Mikael</h2>
+            <h2 className="sidebar-profile-name">{name}</h2>
             <h3 className="ubah-profile-wrapper">
               <img className="logo-pencil" alt="edit" src={LogoPencil} />
               Ubah profile
@@ -32,7 +33,7 @@ export class Sidebar extends Component {
                 />
                 <h3
                   className="sidebar-name-custommer"
-                  style={{ color: this.props.show1 }}
+                  style={{ color: props.show1 }}
                 >
                   My Account
                 </h3>
@@ -42,10 +43,14 @@ export class Sidebar extends Component {
           <Link to="/profile/custommer/shippingaddress">
             <div className="sidebar-menu-wrapper">
               <div className="sidebar-menu-custommer">
-                <img className="sidebar-logo-custommer" alt="shoppingaddress" src={ShoppingAddress} />
+                <img
+                  className="sidebar-logo-custommer"
+                  alt="shoppingaddress"
+                  src={ShoppingAddress}
+                />
                 <h3
                   className="sidebar-name-custommer"
-                  style={{ color: this.props.show2 }}
+                  style={{ color: props.show2 }}
                 >
                   Shipping Address
                 </h3>
@@ -55,10 +60,14 @@ export class Sidebar extends Component {
           <Link to="/profile/custommer/myorder">
             <div className="sidebar-menu-wrapper">
               <div className="sidebar-menu-custommer">
-                <img className="sidebar-logo-custommer" alt="myorder" src={MyOrder} />
+                <img
+                  className="sidebar-logo-custommer"
+                  alt="myorder"
+                  src={MyOrder}
+                />
                 <h3
                   className="sidebar-name-custommer"
-                  style={{ color: this.props.show3 }}
+                  style={{ color: props.show3 }}
                 >
                   My Order
                 </h3>
@@ -69,6 +78,6 @@ export class Sidebar extends Component {
       </div>
     );
   }
-}
 
-export default Sidebar;
+
+export default sidebarCustommer;

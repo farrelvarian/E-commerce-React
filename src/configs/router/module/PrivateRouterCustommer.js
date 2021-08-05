@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) => {
-        if (isAuth === true && role === "CUSTOMMER") {
+        if (isAuth === "true" && role === "CUSTOMMER") {
           return <Component {...props} />;
         } else if (isAuth === true && role === "SELLER") {
           return <Redirect to="/profile/seller/storeprofile" />;

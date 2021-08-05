@@ -97,6 +97,13 @@
     cursor: pointer;
 }
 
+img.profile_image {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
     .navbar_container {
         min-height: 100px;

@@ -1,10 +1,70 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import Navbar from "../../../components/module/NavbarAfterLogin";
 import Sidebar from "../../../components/module/SidebarCustommer";
 import "./style.css";
-import Profile from "../../../assets/image/logo/profileBig.svg";
+// import Profile from "../../../assets/image/logo/profileBig.svg";
+import { BASE_URL } from "../../../configs/configs";
+import { useDispatch } from "react-redux";
+import { updateUser} from "../../../configs/redux/actions/userAction";
+import { useHistory } from "react-router-dom";
+const axios = require("axios");
 
 const ProfileCustommer = (props) => {
+    const dispatch = useDispatch();
+    const history = useHistory()
+  const token = localStorage.getItem("token");
+  const id = localStorage.getItem("id");
+  const [users, setUsers] = useState({
+    name: "",
+    email: "",
+    password: "",
+    image: "",
+    phone: 0,
+    gender: "",
+    dateOfBirth: "",
+    role: "",
+    store_name: "",
+    store_description: "",
+    status: "",
+    updateAt: new Date(),
+  });
+  const [imageUser, setImage] = useState("");
+  let imagePreview = "";
+
+  if (!imageUser) {
+    imagePreview = users.image;
+  } else {
+    imagePreview = URL.createObjectURL(imageUser[0]);
+  }
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}users/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        const [result] = response.data.data;
+        setUsers(result);
+      })
+      .catch(console.error());
+  }, []);
+  const handleForm = (e) => {
+    setUsers({ ...users, [e.target.name]: e.target.value });
+  };
+  const onFileChange = (e) => {
+    setImage(e.target.files);
+  };
+  const updateUserByid = () => {
+  dispatch(updateUser(id, users, imageUser[0]));
+  };
+   const logoutCustommer = () => {
+    const isAuth = false;
+    const role = localStorage.getItem("role");
+    localStorage.setItem("isAuth", isAuth);
+    history.push(`/login/${role}`);
+   };
   return (
     <div className="page">
       <Navbar />
@@ -24,6 +84,8 @@ const ProfileCustommer = (props) => {
                     name="name"
                     type="name"
                     placeholder="name"
+                    value={users.name}
+                    onChange={(e) => handleForm(e)}
                     autocomplete="off"
                   />
                 </div>
@@ -34,6 +96,8 @@ const ProfileCustommer = (props) => {
                     name="email"
                     type="email"
                     placeholder="email"
+                    value={users.email}
+                    onChange={(e) => handleForm(e)}
                     autocomplete="off"
                   />
                 </div>
@@ -44,6 +108,8 @@ const ProfileCustommer = (props) => {
                     name="phone"
                     type="number"
                     placeholder="phone number"
+                    value={users.phone}
+                    onChange={(e) => handleForm(e)}
                     autocomplete="off"
                   />
                 </div>
@@ -54,16 +120,18 @@ const ProfileCustommer = (props) => {
                       className="radio gender"
                       type="radio"
                       name="gender"
-                      value="1"
+                      value="MALE"
+                      onChange={(e) => handleForm(e)}
                     />
                     <label for="gender" className="text-radio-gender">
                       Laki-Laki
                     </label>
                     <input
-                      className="radio gerder"
+                      className="radio gender"
                       type="radio"
                       name="gender"
-                      value="2"
+                      value="FEMALE"
+                      onChange={(e) => handleForm(e)}
                     />
                     <label for="gender" className="text-radio-gender">
                       Perempuan
@@ -75,9 +143,7 @@ const ProfileCustommer = (props) => {
                   <div className="select-input-wrapper">
                     <select className="select-input" id="date" name="date">
                       <option value="">Date</option>
-                      <option value="1" selected>
-                        1
-                      </option>
+                      <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
@@ -111,9 +177,7 @@ const ProfileCustommer = (props) => {
                     </select>
                     <select className="select-input" id="month" name="month">
                       <option value="">Month</option>
-                      <option value="1" selected>
-                        Januari
-                      </option>
+                      <option value="1">Januari</option>
                       <option value="2">Februari</option>
                       <option value="3">Maret</option>
                       <option value="4">April</option>
@@ -159,25 +223,40 @@ const ProfileCustommer = (props) => {
                       <option value="29">1993</option>
                       <option value="30">1992</option>
                       <option value="31">1991</option>
-                      <option value="32" selected>
-                        1990
-                      </option>
+                      <option value="32">1990</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div className="vertical-line"></div>
               <div>
-                <img className="profile-main" src={Profile} alt="profile" />
-                <button type="button " className="btn btn-select-image">
-                  Select image
-                </button>
+                <img
+                  className="profile-main"
+                  src={imagePreview}
+                  alt="profile"
+                />
+                <input
+                  type="file"
+                  className="btn btn-select-image"
+                  onChange={(e) => onFileChange(e)}
+                />
               </div>
             </div>
-            <button type="button " className="btn btn-save-myaccount">
+            <button
+              type="button"
+              className="btn btn-save-myaccount"
+              onClick={updateUserByid}
+            >
               Save
             </button>
           </div>
+          <button
+            type="button"
+            className="btn btn-logout-myaccount"
+            onClick={logoutCustommer}
+          >
+            Log Out
+          </button>
         </section>
       </div>
     </div>

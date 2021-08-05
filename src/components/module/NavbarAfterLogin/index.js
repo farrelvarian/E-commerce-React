@@ -6,13 +6,14 @@ import { ReactComponent as FilterImage } from "../../../assets/image/logo/filter
 import { ReactComponent as CartImage } from "../../../assets/image/logo/cart.svg";
 import { ReactComponent as NotifImage } from "../../../assets/image/logo/bell.svg";
 import { ReactComponent as MailImage } from "../../../assets/image/logo/mail.svg";
-import ProfileImage from "../../../assets/image/logo/profile.png";
+// import ProfileImage from "../../../assets/image/logo/profile.png";
 import "./style.css";
 import { useHistory,Link } from "react-router-dom";
 
 const NavbarAfter = (props) => {
+  const image = localStorage.getItem("image");
   const [search, setSearch] = useState("");
-
+ 
   let location = useHistory();
 
   const handleForm = (e) => {
@@ -25,10 +26,14 @@ const NavbarAfter = (props) => {
     location.push(`/search?search=${search}`);
     location.go(0)
   };
+   let linkProfile = "";
+   const role = localStorage.getItem("role");
+   if (role==="CUSTOMMER") {linkProfile = "/profile/custommer/myaccount";
+   }else if(role==="SELLER"){linkProfile = "/profile/seller/storeprofile";}
   return (
     <div>
       <nav className={style.navbar_container}>
-        <div className={style.logo} >
+        <div className={style.logo}>
           <Logo />
         </div>
         <div className={style.search_filter}>
@@ -64,8 +69,8 @@ const NavbarAfter = (props) => {
             <MailImage />
           </div>
           <div className={style.profile}>
-            <Link to="/profile/custommer/myaccount">
-              <img src={ProfileImage} alt="iamge"/>
+            <Link to={linkProfile}>
+              <img className={style.profile_image} src={image} alt="iamge" />
             </Link>
           </div>
         </div>

@@ -1,9 +1,18 @@
 import React from "react";
 import Navbar from "../../components/module/NavbarAfterLogin";
+import CardBox from "../../components/base/CardBox";
 import "./style.css";
-import ImageProduct from "../../assets/image/image/item.png"
+// import ImageProduct from "../../assets/image/image/item.png"
+
+import {  useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const MyBag = () => {
+      const history = useHistory()
+ const { product, totalPrice } = useSelector((state) => state.order);
+  const handleCheckout = () => {
+    history.push("/checkout")
+  };
   return (
     <div className="container-page">
       <Navbar />
@@ -24,61 +33,27 @@ const MyBag = () => {
               Select all items
               <span className="text-qty"> (2 items selected)</span>
             </h1>
-            <h1 className="text-delete" >
-              Delete
-            </h1>
+            <h1 className="text-delete">Delete</h1>
           </div>
-          <div className="container item-mybag ">
-            <div className="select-items">
-              <input
-                className="checkbox10"
-                type="checkbox"
-                id="item1"
-                name="item1"
-                value="item1"
-              />
-            </div>
-            <img className="image-mybag" src={ImageProduct} alt="suit" />
-            <h1 className="text-name-product" for="item1 ">
-              {" "}
-              Men's formal suit - Black{" "}
-              <span className="text-brand">Zalora Cloth</span>{" "}
-            </h1>
-            <button className="btn-minus">-</button>
-            <h1 className="item-qty">1</h1>
-            <button className="btn-plus">+</button>
-            <h1 className="text-item-price">$ 20.0</h1>
-          </div>
-          <div className="container item-mybag">
-            <div className="select-items">
-              <input
-                className="checkbox10"
-                type="checkbox"
-                id="item2"
-                name="item2"
-                value="item2"
-              />
-            </div>
-            <img className="image-mybag" src={ImageProduct} alt="jacket" />
-            <h1 className="text-name-product" for="item2 ">
-              {" "}
-              Men's Jacket jeans{" "}
-              <span className="text-brand">Zalora Cloth</span>{" "}
-            </h1>
-            <button className="btn-minus">-</button>
-            <h1 className="item-qty">1</h1>
-            <button className="btn-plus">+</button>
-            <h1 className="text-item-price">$ 20.0</h1>
-          </div>
+          {product.map((item) => (
+            <CardBox
+              name={item.name}
+              brand={item.brand}
+              image={item.image1}
+              price={item.price}
+              type="mybag"
+            />
+          ))}
         </div>
         <div className="container shopping">
           <h1 className="text-shopping-summary">Shopping summary</h1>
           <h1 className="text-total-price">
-            Total prices<span className="text-dollar-price">$ 40.0</span>
+            Total prices
+            <span className="text-dollar-price">Rp. {totalPrice}</span>
           </h1>
-          <a href="../checkout/index.html" className="btnBuy">
+          <button type="button" className="btnBuy" onClick={handleCheckout}>
             BUY
-          </a>
+          </button>
         </div>
       </div>
     </div>

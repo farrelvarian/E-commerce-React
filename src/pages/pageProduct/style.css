@@ -21,17 +21,20 @@
 }
 
 .main-image-pageProduct {
+    margin-top: 55px;
     margin-left: 64px;
     border-radius: 8px;
 }
 
-.preview-image-pageProduct {
+img.preview-image-pageProduct {
     border-radius: 8px;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
 }
 
 .image-product-pageProduct {
     margin-left: 0;
-    margin-top: 50px;
     width: 366px;
 }
 
@@ -397,7 +400,7 @@
     .main-desc {
         width: 400px;
     }
-    .container.content-product {
+    .container.content-pageProduct {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;

@@ -69,7 +69,7 @@ const Home = (props) => {
           {products.map((item) => (
             <Card
               to={item.id}
-              image={item.image}
+              image={item.image1}
               title={item.name}
               price={`Rp ${item.price}`}
               brand={item.brand}

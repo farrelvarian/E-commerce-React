@@ -4,61 +4,75 @@ import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import "./style.css";
 import { Editor } from "@tinymce/tinymce-react";
-import PhotoUpload from "../../../../assets/image/image/foto.png";
-import { BASE_URL } from "../../../../configs/configs";
-const axios = require("axios");
+// import PhotoUpload from "../../../../assets/image/image/foto.png";
+// import { BASE_URL } from "../../../../configs/configs";
+import { useDispatch } from "react-redux";
+import { sellingProductAdd } from "../../../../configs/redux/actions/productAction";
+// const axios = require("axios");
 
 const ProfileSeller = () => {
-  const token  = localStorage.getItem("token")
+    const dispatch = useDispatch();
+   
+  // const token = localStorage.getItem("token");
 
   const editorRef = useRef(null);
-  
+
   const [products, setProducts] = useState({
     name: "",
     brand: "",
     price: 0,
     description: "",
     category_id: 25,
-    category: "No Category",
-    updateAt: new Date(),
+    category: "",
+    image_id: "",
+    image1: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
+    createdAt: new Date(),
   });
-  const [selectedFile, setSelectedFile] = useState([]);
+  const [images, setImages] = useState([]);
+  const [imagesPreview] = [images.map((item) => URL.createObjectURL(item))]
+  
 
   const handleForm = (e) => {
     setProducts({ ...products, [e.target.name]: e.target.value });
   };
 
-  const onFileChange = (e) => {return setSelectedFile([...e.target.files]);}
+  const onFileChange = (e) => {
+    setImages([...e.target.files]);
+    // setImagesPreview([...URL.createObjectURL(e.target.files)]);
+  };
 
   const addProductByid = () => {
-    
-      const formData = new FormData();
-      formData.append("name",products.name);
-      formData.append("brand", products.brand);
-      formData.append("price", products.price);
-      formData.append("description", products.description);
-      formData.append("category_id", products.category_id);
-      formData.append("category", products.category);
-      formData.append("updateAt", products.updateAt);
-      for (let i = 0 ; i<selectedFile.length;i++){
-        formData.append("images",selectedFile[i]);
-      }
-      
-      console.log(selectedFile);
-    axios
-      .post(`${BASE_URL}products/`, formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then(() => {
-        console.log("success add data");
-        alert("data berhasil ditambahkan");
-      })
-      .catch(console.error());
-  }
+       dispatch(sellingProductAdd(products, images));
+    // const formData = new FormData();
+    // formData.append("name", products.name);
+    // formData.append("brand", products.brand);
+    // formData.append("price", products.price);
+    // formData.append("description", products.description);
+    // formData.append("category_id", products.category_id);
+    // formData.append("category", products.category);
+    // formData.append("updateAt", products.updateAt);
+    // for (let i = 0; i < images.length; i++) {
+    //   formData.append("images", images[i]);
+    // }
 
-  console.log(products);
+    // axios
+    //   .post(`${BASE_URL}products/`, formData, {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   })
+    //   .then(() => {
+    //     console.log("success add data");
+    //     alert("data berhasil ditambahkan");
+    //   })
+    //   .catch(console.error());
+  };
+
+  console.log(imagesPreview);
 
   return (
     <div className="page">
@@ -126,20 +140,20 @@ const ProfileSeller = () => {
               <div className="photo-wrapper">
                 <img
                   className="foto utama"
-                  src={PhotoUpload}
+                  src={imagesPreview[0]}
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
+                  <img className="foto" src={imagesPreview[1]} alt="foto" />
+                  <img className="foto" src={imagesPreview[2]} alt="foto" />
+                  <img className="foto" src={imagesPreview[3]} alt="foto" />
+                  <img className="foto" src={imagesPreview[4]} alt="foto" />
                 </div>
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
               <input
-              multiple
+                multiple
                 type="file"
                 className="btn btn-upload"
                 // value={selectedFile}

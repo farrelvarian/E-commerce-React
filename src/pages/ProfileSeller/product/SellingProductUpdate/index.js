@@ -5,8 +5,10 @@ import Sidebar from "../../../../components/module/SidebarSeller";
 import "./style.css";
 import { useHistory, useParams } from "react-router-dom";
 import { Editor } from "@tinymce/tinymce-react";
-import PhotoUpload from "../../../../assets/image/image/foto.png";
+// import PhotoUpload from "../../../../assets/image/image/foto.png";
 import { BASE_URL } from "../../../../configs/configs";
+import { useDispatch } from "react-redux";
+import { sellingProductUpdate } from "../../../../configs/redux/actions/productAction";
 const axios = require("axios");
 
 const ProfileSeller = () => {
@@ -29,17 +31,32 @@ const ProfileSeller = () => {
     image5: "",
     updateAt: new Date(),
   });
-  
+  let imagesArray = [];
+  const [images, setImages] = useState([]);
+  if (images.length < 1) {
+    imagesArray = [
+      products.image1,
+      products.image2,
+      products.image3,
+      products.image4,
+      products.image5,
+    ];
+  } else {
+    [imagesArray] = [images.map((item) => URL.createObjectURL(item))];
+  }
+console.log(imagesArray);
+ const dispatch = useDispatch();
   const history = useHistory();
 
   const params = useParams();
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}products/${params.id}`,{
+      .get(`${BASE_URL}products/${params.id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
-        },})
+        },
+      })
       .then((response) => {
         const [result] = response.data.data;
         setProducts(result);
@@ -52,14 +69,34 @@ const ProfileSeller = () => {
     setProducts({ ...products, [e.target.name]: e.target.value });
   };
 
+  const onFileChange = (e) => {
+    setImages([...e.target.files]);
+  };
+
   const updateProductByid = () => {
-    axios
-      .put(`${BASE_URL}products/${params.id}`, products)
-      .then(() => {
-        console.log("success update data");
-        history.push(`/profile/seller/myproduct`);
-      })
-      .catch(console.error());
+    dispatch(sellingProductUpdate(products, images,history,params));
+    // const formData = new FormData();
+    // formData.append("name", products.name);
+    // formData.append("brand", products.brand);
+    // formData.append("price", products.price);
+    // formData.append("description", products.description);
+    // formData.append("category_id", products.category_id);
+    // formData.append("category", products.category);
+    // formData.append("updateAt", products.updateAt);
+    // for (let i = 0; i < images.length; i++) {
+    //   formData.append("images", images[i]);
+    // }
+    // axios
+    //   .put(`${BASE_URL}products/${params.id}`, formData, {
+    //     headers: {
+    //       Authorization: `Bearer ${token}`,
+    //     },
+    //   })
+    //   .then(() => {
+    //     alert("success update data");
+    //     history.push(`/profile/seller/myproduct`);
+    //   })
+    //   .catch(console.error());
   };
 
   return (
@@ -131,21 +168,25 @@ const ProfileSeller = () => {
               <div className="photo-wrapper">
                 <img
                   className="foto utama"
-                  src={PhotoUpload}
+                  src={imagesArray[0]}
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
-                  <img className="foto" src={PhotoUpload} alt="foto" />
+                  <img className="foto" src={imagesArray[1]} alt="foto" />
+                  <img className="foto" src={imagesArray[2]} alt="foto" />
+                  <img className="foto" src={imagesArray[3]} alt="foto" />
+                  <img className="foto" src={imagesArray[4]} alt="foto" />
                 </div>
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
-              <input type="file" className="btn btn-upload">
-                Upload foto
-              </input>
+              <input
+                multiple
+                type="file"
+                className="btn btn-upload"
+                // value={selectedFile}
+                onChange={(e) => onFileChange(e)}
+              />
             </div>
           </div>
           <div className="section-container-desc">

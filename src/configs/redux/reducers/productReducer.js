@@ -1,14 +1,13 @@
 const initialValue = {
   data: {},
   error: null,
-  message:null,
-  status:null,
-
+  message: null,
+  status: null,
 };
 
 const userReducers = (state = initialValue, action) => {
   switch (action.type) {
-    case "POST_LOGIN":
+    case "GET_PRODUCT":
       return {
         ...state,
         data: action.payload.data,
@@ -16,7 +15,7 @@ const userReducers = (state = initialValue, action) => {
         message: action.payload.message,
         status: action.payload.status,
       };
-    case "POST_REGISTER":
+    case "POST_PRODUCT":
       return {
         ...state,
         data: action.payload.data,
@@ -24,7 +23,15 @@ const userReducers = (state = initialValue, action) => {
         message: action.payload.message,
         status: action.payload.status,
       };
-    case "PUT_USER":
+    case "PUT_PRODUCT":
+      return {
+        ...state,
+        data: action.payload.data,
+        error: action.payload.error,
+        message: action.payload.message,
+        status: action.payload.status,
+      };
+    case "DEL_PRODUCT":
       return {
         ...state,
         data: action.payload.data,

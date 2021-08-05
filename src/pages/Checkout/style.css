@@ -131,7 +131,7 @@
         font-size: 18px;
         font-weight: 600;
         color: black;
-        margin-left: 210px;
+        margin-left: 150px;
     }
     
     .text-delivery {
@@ -145,14 +145,14 @@
         font-size: 18px;
         font-weight: 600;
         color: black;
-        margin-left: 205px;
+        margin-left: 155px;
     }
     
     .text-price-summary {
         font-size: 18px;
         font-weight: 600;
         color: #db3022;
-        margin-left: 95px;
+        margin-left: 45px;
     }
     
     .btnSelectPayment {

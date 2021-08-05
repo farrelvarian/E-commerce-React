@@ -4,7 +4,10 @@
     background-color: #f5f5f5;
 }
 
-.profile-seller {
+img.sidebar-profile-seller {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
     border-radius: 50%;
 }
 

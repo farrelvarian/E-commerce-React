@@ -1,42 +1,41 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/module/NavbarBeforeLogin";
+import Navbar from "../../components/module/NavbarAfterLogin";
 import ButtonIncDec from "../../components/base/buttonIncDec";
 import "./style.css";
-import Prev1 from "../../assets/image/page-product/prev1.png";
-import Prev2 from "../../assets/image/page-product/prev2.png";
-import Prev3 from "../../assets/image/page-product/prev3.png";
-import Prev4 from "../../assets/image/page-product/prev4.png";
-import Prev5 from "../../assets/image/page-product/prev5.png";
+// import Prev1 from "../../assets/image/page-product/prev1.png";
+// import Prev2 from "../../assets/image/page-product/prev2.png";
+// import Prev3 from "../../assets/image/page-product/prev3.png";
+// import Prev4 from "../../assets/image/page-product/prev4.png";
+// import Prev5 from "../../assets/image/page-product/prev5.png";
 import Star from "../../assets/image/logo/star.svg";
 import Card from "../../components/base/Card";
-import { useParams } from "react-router-dom";
-import { BASE_URL } from "../../configs/configs";
-const axios = require("axios");
+import { useHistory, useParams } from "react-router-dom";
+// import { BASE_URL } from "../../configs/configs";
+import { useDispatch } from "react-redux";
+import { pageProduct } from "../../configs/redux/actions/productAction";
+import { myBag, checkout } from "../../configs/redux/actions/orderAction";
+// const axios = require("axios");
 
 const PageProduct = (props) => {
+    const dispatch = useDispatch();
+    const history = useHistory()
+  // const token = localStorage.getItem("token");
   let { id } = useParams();
   const [products, setProducts] = useState({});
   const [categories, setCategories] = useState([]);
+// console.log(products);
+  useEffect( () => {
+     dispatch(pageProduct(id, setProducts, setCategories));
 
-  useEffect(async () => {
-    try {
-      const { data: data1 } = await (
-        await axios.get(`${BASE_URL}products/${id}`)
-      ).data;
-      const { data: data2 } = await (
-        await axios.get(`${BASE_URL}products/category/${data1[0].category_id}`)
-      ).data;
-      console.log(data1);
-      console.log(data2);
-      setProducts(data1[0]);
-      setCategories(data2);
-      window.scrollTo(0, 0);
-    } catch (error) {
-      console.log(error);
-    }
   }, [id]);
-
+ const handleMyBag = () => {
+   dispatch(myBag(products, history));
+   
+ };
+ const handleCheckout = () => {
+   dispatch(checkout(products, history));
+ };
   return (
     <div className="wrapper-pageProduct">
       <Navbar />
@@ -49,11 +48,31 @@ const PageProduct = (props) => {
               alt="main"
             />
             <div className="preview-image-wrapper-pageProduct">
-              <img className="preview-image-pageProduct" src={Prev1} alt="1" />
-              <img className="preview-image-pageProduct" src={Prev2} alt="2" />
-              <img className="preview-image-pageProduct" src={Prev3} alt="3" />
-              <img className="preview-image-pageProduct" src={Prev4} alt="4" />
-              <img className="preview-image-pageProduct" src={Prev5} alt="5" />
+              <img
+                className="preview-image-pageProduct"
+                src={products.image1}
+                alt="1"
+              />
+              <img
+                className="preview-image-pageProduct"
+                src={products.image2}
+                alt="2"
+              />
+              <img
+                className="preview-image-pageProduct"
+                src={products.image3}
+                alt="3"
+              />
+              <img
+                className="preview-image-pageProduct"
+                src={products.image4}
+                alt="4"
+              />
+              <img
+                className="preview-image-pageProduct"
+                src={products.image5}
+                alt="5"
+              />
             </div>
           </div>
           <div className="info">
@@ -116,12 +135,20 @@ const PageProduct = (props) => {
                 <button type="button " className="btn btn-chat">
                   Chat
                 </button>
-                <a href="/MyBag" type="button " className="btn btn-addBag">
+                <button
+                  type="button "
+                  className="btn btn-addBag"
+                  onClick={handleMyBag}
+                >
                   Add bag
-                </a>
-                <a href="/Checkout" type="button " className="btn btn-buyNow">
+                </button>
+                <button
+                  type="button "
+                  className="btn btn-buyNow"
+                  onClick={handleCheckout}
+                >
                   Buy Now
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -129,7 +156,7 @@ const PageProduct = (props) => {
         <h1 className="main-title">Informasi Produk</h1>
         <h2 className="main-title">Condition</h2>
         <h2 className="main-desc" id="condition">
-          New
+          {products.status}
         </h2>
         <h2 className="main-title">Description</h2>
         <h4 className="main-desc" id="description">

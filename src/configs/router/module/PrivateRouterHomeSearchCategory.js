@@ -8,17 +8,13 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) => {
-        return isAuth ? (
-          <>
+        if(isAuth==="true"){return  <>
             <NavbarAfter />
             <Component {...props} />
-          </>
-        ) : (
-          <>
+          </>}else{return  <>
             <NavbarBefore />
             <Component {...props} />
-          </>
-        );
+          </>}
       }}
     />
   );

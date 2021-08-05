@@ -130,6 +130,20 @@
     margin-right: 20px;
 }
 
+.btn-logout-storeProfile {
+    margin-top: 25px;
+    width: 160px;
+    height: 36px;
+    background: white;
+    border-radius: 25px;
+    color: rgb(194, 194, 194);
+    outline: none;
+    cursor: pointer;
+    border: solid 1px rgb(194, 194, 194);
+    margin-left: 735px;
+    margin-right: 20px;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
     .section-container-storeProfile {
         width: 100%;
@@ -257,5 +271,18 @@
         font-size: 14px;
         background-color: white;
         color: #9b9b9b;
+    }
+    .btn-logout-storeProfile {
+        margin-top: 25px;
+        width: 160px;
+        height: 36px;
+        background: white;
+        border-radius: 25px;
+        color: rgb(194, 194, 194);
+        outline: none;
+        cursor: pointer;
+        border: solid 1px rgb(194, 194, 194);
+        margin-left: 30px;
+        margin-right: 20px;
     }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import style from "./navbar.module.css";
 import Logo from "../../base/Logo";
 import { ReactComponent as SearchImage } from "../../../assets/image/logo/search.svg";
@@ -6,15 +6,15 @@ import { ReactComponent as FilterImage } from "../../../assets/image/logo/filter
 import { ReactComponent as CartImage } from "../../../assets/image/logo/cart.svg";
 import { ReactComponent as NotifImage } from "../../../assets/image/logo/bell.svg";
 import { ReactComponent as MailImage } from "../../../assets/image/logo/mail.svg";
-import ProfileImage from "../../../assets/image/logo/profile.png";
+// import ProfileImage from "../../../assets/image/logo/profile.png";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-export class index extends Component {
-  render() {
+const NavbarSeller = (props) => {
+   const image = localStorage.getItem("image");
     return (
       <nav className={style.navbar_container}>
-        <div className={style.logo} >
+        <div className={style.logo}>
           <Logo />
         </div>
         <div className={style.search_filter}>
@@ -49,14 +49,14 @@ export class index extends Component {
             <MailImage />
           </div>
           <div className={style.profile}>
-            <Link to="/profile/custommer/myaccount">
-              <img src={ProfileImage} alt="Profile"/>
+            <Link to="/profile/seller/storeprofile">
+              <img className={style.profile_image} src={image} alt="Profile" />
             </Link>
           </div>
         </div>
       </nav>
     );
-  }
+  
 }
 
-export default index;
+export default NavbarSeller;
