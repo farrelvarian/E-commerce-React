@@ -129,6 +129,10 @@
     margin-left: 55px;
 }
 
+.select-image-btn {
+    display: none
+}
+
 .btn-select-image {
     margin-top: 19px;
     margin-left: 45px;

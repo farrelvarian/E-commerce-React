@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/module/NavbarAfterLogin";
 import ButtonIncDec from "../../components/base/buttonIncDec";
 import "./style.css";
-// import Prev1 from "../../assets/image/page-product/prev1.png";
+import NoImage from "../../assets/image/image/foto.png";
 // import Prev2 from "../../assets/image/page-product/prev2.png";
 // import Prev3 from "../../assets/image/page-product/prev3.png";
 // import Prev4 from "../../assets/image/page-product/prev4.png";
@@ -44,33 +44,33 @@ const PageProduct = (props) => {
           <div className="image-pageProduct">
             <img
               className="main-image-pageProduct"
-              src={products.image1}
+              src={products.image1 ? products.image1 : NoImage}
               alt="main"
             />
             <div className="preview-image-wrapper-pageProduct">
               <img
                 className="preview-image-pageProduct"
-                src={products.image1}
+                src={products.image1 ? products.image1 : NoImage}
                 alt="1"
               />
               <img
                 className="preview-image-pageProduct"
-                src={products.image2}
+                src={products.image2 ? products.image2 : NoImage}
                 alt="2"
               />
               <img
                 className="preview-image-pageProduct"
-                src={products.image3}
+                src={products.image3 ? products.image3 : NoImage}
                 alt="3"
               />
               <img
                 className="preview-image-pageProduct"
-                src={products.image4}
+                src={products.image4 ? products.image4 : NoImage}
                 alt="4"
               />
               <img
                 className="preview-image-pageProduct"
-                src={products.image5}
+                src={products.image5?products.image5:NoImage}
                 alt="5"
               />
             </div>

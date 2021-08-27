@@ -180,19 +180,22 @@ console.log(imagesArray);
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
-              <input
+            <input
                 multiple
                 type="file"
-                className="btn btn-upload"
+                className="upload-images-btn"
+                id="upload-images"
                 // value={selectedFile}
                 onChange={(e) => onFileChange(e)}
               />
+              <label htmlFor="upload-images">
+                <div className="btn btn-upload">Upload Images</div>
+              </label>
             </div>
           </div>
           <div className="section-container-desc">
             <h1 className="section-title">Description</h1>
             <div className="container">
-              {" "}
               <Editor
                 name="description"
                 apiKey="rildaruegewa87otvjms49g68pepw1sp8nv2e0n5863iw0ie"

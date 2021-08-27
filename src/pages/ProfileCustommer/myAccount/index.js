@@ -230,16 +230,21 @@ const ProfileCustommer = (props) => {
               </div>
               <div className="vertical-line"></div>
               <div>
+                <label htmlFor="select-image">
                 <img
                   className="profile-main"
                   src={imagePreview}
                   alt="profile"
-                />
+                /></label>
                 <input
                   type="file"
-                  className="btn btn-select-image"
+                  className="select-image-btn"
+                  id="select-image"
                   onChange={(e) => onFileChange(e)}
                 />
+                <label htmlFor="select-image">
+                  <div className="btn btn-select-image">Select Image</div>
+                </label>
               </div>
             </div>
             <button

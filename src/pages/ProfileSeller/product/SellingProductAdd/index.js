@@ -155,10 +155,14 @@ const ProfileSeller = () => {
               <input
                 multiple
                 type="file"
-                className="btn btn-upload"
+                className="upload-images-btn"
+                id="upload-images"
                 // value={selectedFile}
                 onChange={(e) => onFileChange(e)}
               />
+              <label htmlFor="upload-images">
+                <div className="btn btn-upload">Upload Images</div>
+              </label>
             </div>
           </div>
           <div className="section-container-desc">

@@ -130,6 +130,10 @@
                 margin-top: 10px;
             }
             
+            .upload-images-btn {
+                display: none
+            }
+            
             .btn-upload {
                 width: 160px;
                 height: 36px;
