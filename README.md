@@ -17,6 +17,8 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 <a href="https://blanja-e-commerce.herokuapp.com/">Rest API</a> 
 <a href="https://github.com/farrelvarian/E-commerce-React">Repository Frontend</a> 
 <a href="https://github.com/farrelvarian/backendE-commerce">Repository Backend</a> 
+  
+  
 ## Preview Project
 
   <p align='center'>
