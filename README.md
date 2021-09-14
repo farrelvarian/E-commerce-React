@@ -12,6 +12,15 @@
 
 E-commerce website focus on fashion that brings together sellers and customers. It has search, sort, product detail and my bag features for customers as well as add, update and delete products for sellers. Built using ReactJS, ExpressJS and MySQL.
 
+## Preview Project
+
+<p align='center'>
+  <span>
+      <image width="200" src='./screenshots/home fix.png' />
+      <image width="200" src='./screenshots/my-bag fix.png' />
+      <image width="200" src='./screenshots/my-product fix.png' />
+      <image width="200" src='./screenshots/page-product fix.png' />
+
 ## Built With
 
 [![React](https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124)](https://reactjs.org/)
