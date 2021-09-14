@@ -113,8 +113,10 @@ const ProfileSeller = () => {
                 <tbody>
                   {products.map((item) => (
                     <tr>
-                      <th scope="row">{item.id}</th>
-                      <td>{item.name}</td>
+                      <th scope="row">{item.name}</th>
+                      <td>
+                        <img className="list-image-product" src={item.image1} alt={item.name} />
+                      </td>
                       <td>{item.price}</td>
                       <td className="button-wrapper">
                         <button

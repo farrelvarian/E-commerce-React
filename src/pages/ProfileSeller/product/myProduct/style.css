@@ -62,6 +62,12 @@
     cursor: pointer;
 }
 
+.list-image-product {
+    height: 20px;
+    width: 20px;
+    object-fit: cover;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
     .content-container {
         display: flex;
