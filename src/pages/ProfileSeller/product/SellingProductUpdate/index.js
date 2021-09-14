@@ -9,6 +9,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import { BASE_URL } from "../../../../configs/configs";
 import { useDispatch } from "react-redux";
 import { sellingProductUpdate } from "../../../../configs/redux/actions/productAction";
+import NoImage from "../../../../assets/image/image/foto.png";
 const axios = require("axios");
 
 const ProfileSeller = () => {
@@ -172,15 +173,31 @@ console.log(imagesArray);
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">
-                  <img className="foto" src={imagesArray[1]} alt="foto" />
-                  <img className="foto" src={imagesArray[2]} alt="foto" />
-                  <img className="foto" src={imagesArray[3]} alt="foto" />
-                  <img className="foto" src={imagesArray[4]} alt="foto" />
+                  <img
+                    className="foto"
+                    src={imagesArray[1] ? imagesArray[1] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesArray[2] ? imagesArray[2] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesArray[3] ? imagesArray[3] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesArray[4] ? imagesArray[4] : NoImage}
+                    alt="foto"
+                  />
                 </div>
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
               <hr size="1px" />
-            <input
+              <input
                 multiple
                 type="file"
                 className="upload-images-btn"

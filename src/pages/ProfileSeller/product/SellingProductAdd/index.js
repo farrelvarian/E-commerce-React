@@ -9,6 +9,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import { useDispatch } from "react-redux";
 import { sellingProductAdd } from "../../../../configs/redux/actions/productAction";
 // const axios = require("axios");
+import NoImage from "../../../../assets/image/image/foto.png";
 
 const ProfileSeller = () => {
     const dispatch = useDispatch();
@@ -144,10 +145,26 @@ const ProfileSeller = () => {
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">
-                  <img className="foto" src={imagesPreview[1]} alt="foto" />
-                  <img className="foto" src={imagesPreview[2]} alt="foto" />
-                  <img className="foto" src={imagesPreview[3]} alt="foto" />
-                  <img className="foto" src={imagesPreview[4]} alt="foto" />
+                  <img
+                    className="foto"
+                    src={imagesPreview[1] ? imagesPreview[1] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesPreview[2] ? imagesPreview[2] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesPreview[3] ? imagesPreview[3] : NoImage}
+                    alt="foto"
+                  />
+                  <img
+                    className="foto"
+                    src={imagesPreview[4] ? imagesPreview[4] : NoImage}
+                    alt="foto"
+                  />
                 </div>
               </div>
               <h2 className="section-desc photo">Foto utama</h2>
