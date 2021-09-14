@@ -16,10 +16,10 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
 <p align='center'>
   <span>
-      <image width="200" src='./screenshots/home fix.png' />
-      <image width="200" src='./screenshots/my-bag fix.png' />
-      <image width="200" src='./screenshots/my-product fix.png' />
-      <image width="200" src='./screenshots/page-product fix.png' />
+      <image width="200" src='./screenshot/home fix.png' />
+      <image width="200" src='./screenshot/my-bag fix.png' />
+      <image width="200" src='./screenshot/my-product fix.png' />
+      <image width="200" src='./screenshot/page-product fix.png' />
 
 ## Built With
 
