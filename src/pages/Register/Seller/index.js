@@ -7,6 +7,7 @@ import PrimaryButton from "../../../components/base/PrimaryButton";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../configs/redux/actions/userAction";
 import { useHistory } from "react-router-dom";
+import { toastify } from "../../../configs/toastify/toastify";
 
 const RegisterSeller = () => {
   const [seller, setSeller] = useState({
@@ -31,7 +32,7 @@ const RegisterSeller = () => {
       seller.store_name === "" ||
       seller.password === ""
     ) {
-      alert("all of field mush be filled");
+     toastify("all of field mush be filled", "error");
     } else {
       dispatch(registerUser(seller, history));
     }

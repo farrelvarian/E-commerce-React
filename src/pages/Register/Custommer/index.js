@@ -7,7 +7,7 @@ import PrimaryButton from "../../../components/base/PrimaryButton";
 import { useDispatch } from "react-redux";
 import { registerUser } from "../../../configs/redux/actions/userAction";
 import { useHistory } from "react-router-dom";
-
+import { toastify } from "../../../configs/toastify/toastify";
 
 const RegisterCustommer = () => {
   
@@ -27,12 +27,13 @@ const RegisterCustommer = () => {
     setCustommer({ ...custommer, [e.target.name]: e.target.value });
     
   };
-  const registerCustommerClick = () => {if (
+  const registerCustommerClick = () => {
+    if (
     custommer.name === "" ||
     custommer.email === "" ||
     custommer.password === ""
-  ) {
-    alert("all of field mush be filled");
+  ) {  
+    toastify("all of field mush be filled", "error");
   } else {
      dispatch(registerUser(custommer, history));
   }

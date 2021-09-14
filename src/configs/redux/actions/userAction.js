@@ -1,6 +1,6 @@
 import { BASE_URL } from "../../../configs/configs";
+import { toastify } from "../../toastify/toastify";
 const axios = require("axios");
-
 
 export const loginUser = (data,history) => (dispatch) => {
   axios
@@ -30,8 +30,10 @@ export const loginUser = (data,history) => (dispatch) => {
       localStorage.setItem("isAuth", isAuth);
       
       history.push("/")
+       toastify("Success Login. Happy Shopping!", "success");
     })
-    .catch((error)=>{alert(error.response.data.message);});
+    .catch((error)=>{toastify(error.response.data.message, "error");
+  });
 };
 export const registerUser = (data, history) => (dispatch) => {
   axios
@@ -45,9 +47,13 @@ export const registerUser = (data, history) => (dispatch) => {
       };
       dispatch({ type: "POST_REGISTER", payload: dataUser });
       history.push(`/login/${result.data.data.role}`);
+       toastify(
+         "Success Register. Please check email to verification account",
+         "info"
+       );
     })
     .catch((error) => {
-      alert(error.response.data.message);
+      toastify(error.response.data.message, "error");
     });
 };
 export const updateUser = (id,data, image) => (dispatch) => {
@@ -86,13 +92,16 @@ export const updateUser = (id,data, image) => (dispatch) => {
         localStorage.setItem("image", image);
         localStorage.setItem("name", name);
         localStorage.setItem("address", address);
-       alert("success update data");
+       toastify("success update data", "success");
      })
-     .catch((error) => { alert(error.response.data.message)});
+     .catch((error) => { 
+       toastify(error.response.data.message, "error");
+    });
 };
 export const logoutUser = (history) => () => {
 const isAuth = false;
 const role = localStorage.getItem("role");
 localStorage.setItem("isAuth", isAuth);
 history.push(`/login/${role}`);
+toastify("youre logged out, Bye!", "success");
 };
