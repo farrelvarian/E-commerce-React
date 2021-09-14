@@ -104,8 +104,8 @@ const ProfileSeller = () => {
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">id</th>
                     <th scope="col">Product Name</th>
+                    <th scope="col">image</th>
                     <th scope="col">Price</th>
                     <th scope="col">Action</th>
                   </tr>
@@ -123,7 +123,7 @@ const ProfileSeller = () => {
                           className="btn-update-delete"
                           onClick={() => updateProductByid(item.id)}
                         >
-                          Edit{" "}
+                          Edit
                         </button>
                         <button
                           className="btn-update-delete"
