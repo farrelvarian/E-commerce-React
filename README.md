@@ -16,6 +16,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
 <p align='center'>
 <a href="bit.ly/Blanja-E-Commerce">Preview Website</a>
+  <p align='center'>
   <span>
       <image width="400" src='./screenshot/home fix.png' />
       <image width="400" src='./screenshot/page-product fix.PNG' />
