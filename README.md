@@ -15,7 +15,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 ## Preview Project
 
 <p align='center'>
-<a href="bit.ly/Blanja-E-Commerce">Preview Website</a>
+<a href="https://flamboyant-thompson-4937cf.netlify.app/">Preview Website</a>
   <p align='center'>
   <span>
       <image width="400" src='./screenshot/home fix.png' />
