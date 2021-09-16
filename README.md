@@ -36,7 +36,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
 ## Built With
 
-[![React](https://repository-images.githubusercontent.com/37153337/9d0a6780-394a-11eb-9fd1-6296a684b124)](https://reactjs.org/)
+[![React](https://img.shields.io/badge/React-17.0.2-blue)](https://reactjs.org/)
 
 ## Requirements
 
