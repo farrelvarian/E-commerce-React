@@ -57,9 +57,10 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 2. Open app's directory in CMD or Terminal
 3. Type `npm install` or `yarn install`
 4. Add .env file at root folder project
-sh
+```sh
 REACT_APP_BASE_URL = "http://localhost:4000/"
 REACT_APP_WEB_URL = "http://localhost:3000/"
+```
 5. Type `npm run dev`
 
 ## Acknowledgements
