@@ -69,6 +69,6 @@ REACT_APP_WEB_URL = "http://localhost:3000/"
 - [React](https://reactjs.org/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
 
-## Team
+## Contact
 
 - Full-Stack Developer ([Farrel Varian Eka Putra](https://github.com/farrelvarian))
