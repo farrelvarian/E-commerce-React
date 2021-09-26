@@ -8,6 +8,7 @@ import { BASE_URL } from "../../../configs/configs";
 import { useDispatch } from "react-redux";
 import { updateUser} from "../../../configs/redux/actions/userAction";
 import { useHistory } from "react-router-dom";
+import NoImage from "../../../../src/assets/image/logo/user.svg";
 const axios = require("axios");
 
 const ProfileCustommer = (props) => {
@@ -63,7 +64,7 @@ const ProfileCustommer = (props) => {
     const isAuth = false;
     const role = localStorage.getItem("role");
     localStorage.setItem("isAuth", isAuth);
-    history.push(`/login/${role}`);
+    history.push(`/login/${role.toLowerCase()}`);
    };
   return (
     <div className="page">
@@ -233,7 +234,7 @@ const ProfileCustommer = (props) => {
                 <label htmlFor="select-image">
                 <img
                   className="profile-main"
-                  src={imagePreview}
+                  src={imagePreview?imagePreview:NoImage}
                   alt="profile"
                 /></label>
                 <input

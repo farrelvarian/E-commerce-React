@@ -1,12 +1,41 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from "react";
 import Navbar from "../../../../components/module/NavbarProfileSeller";
 import Sidebar from "../../../../components/module/SidebarSeller";
 import SearchInput from "../../../../components/base/SearchInput";
 import "./style.css";
-import NoOrder from "../../../../assets/image/image/no-order.png"
+import NoOrder from "../../../../assets/image/image/no-order.png";
+import { BASE_URL } from "../../../../configs/configs";
+const axios = require("axios");
 
 const ProfileSeller = (props) => {
-    
+  let pageNumbers = [];
+  const [Refresh, setRefresh] = useState(false);
+  const [payments, setPayments] = useState([]);
+  const [pagination, setPagination] = useState("");
+  const [Number, setNumber] = useState(1);
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}payments/?page=${Number}`)
+      .then((response) => {
+        const { result } = response.data.data;
+        const { pagination } = response.data.data;
+        setPayments(result);
+        setPagination(pagination);
+      })
+      .catch(console.error());
+  }, [Refresh]);
+
+  for (let i = 1; i <= pagination.totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+  const btnPagination = (Number) => {
+    setNumber(Number);
+    Refresh === true ? setRefresh(false) : setRefresh(true);
+  };
+
   return (
     <div className="page">
       <Navbar />
@@ -53,9 +82,46 @@ const ProfileSeller = (props) => {
                 </ul>
               </div>
             </div>
-            <SearchInput />
+            {/* <SearchInput />
             <div className="image-noOrder">
-              <img src={NoOrder} alt="no-order"/>
+              <img src={NoOrder} alt="no-order" />
+            </div> */}
+            <div className="container table-myproduct">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Order ID</th>
+                    <th scope="col">Buyer Name</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Ordered At</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {payments.map((item) => (
+                    <tr>
+                      <th scope="row">{item.id}</th>
+                      <td>{item.name}</td>
+                      <td>{item.total}</td>
+                      <td>{item.createdAt}</td>
+                      {/* <td className="button-wrapper"></td> */}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <nav>
+                <ul className="pagination">
+                  {pageNumbers.map((number) => (
+                    <li key={number} className="page-item">
+                      <button
+                        onClick={() => btnPagination(number)}
+                        className="page-link"
+                      >
+                        {number}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </div>
           </div>
         </section>

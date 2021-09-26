@@ -6,12 +6,47 @@ import Gopay from "../../assets/image/payment/gopay.png";
 import Mastercard from "../../assets/image/payment/mastercard.png";
 import PosIndonesia from "../../assets/image/payment/pos.png";
 import CardBox from "../../components/base/CardBox";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteCart, orderData, orderItems } from "../../configs/redux/actions/orderAction";
+import { toastify } from "../../configs/toastify/toastify";
+import { useHistory } from "react-router";
+
 const Checkout = (props) => {
-   const { product, totalPrice } = useSelector((state) => state.order);
-   const summaryPrice=totalPrice+5000
-    const name = localStorage.getItem("name");
-     const address = localStorage.getItem("address");
+  const dispatch = useDispatch()
+  const history = useHistory()
+   const { product, total, quantity } = useSelector((state) => state.order);
+   const summaryPrice = total + 5000;
+   const name = localStorage.getItem("name");
+  const user_id = localStorage.getItem("id");
+     const dataOrderDetail = {
+       user_id,
+       payment_method: "cash",
+       total: summaryPrice,
+     };
+     console.log(dataOrderDetail,"order detail");
+       const handleSubmit = async () => {
+         dispatch(orderData(dataOrderDetail))
+         .then((result) => {
+           product.forEach((item) => {
+             console.log(result,"response");
+             const product_id = item.id;
+             const payment_id = result.id;
+             console.log(quantity);
+             const dataOrderItem = {
+               product_id,
+               quantity,
+               payment_id,
+               size:"XL",
+               color:"red",
+             };
+             console.log(dataOrderItem,"order item");
+             dispatch(orderItems(dataOrderItem));
+           });
+            dispatch(deleteCart());
+           history.push(`/`);
+          toastify("success buy products", "success");
+         });
+       };
   return (
     <div>
       <div className="container-page">
@@ -23,7 +58,9 @@ const Checkout = (props) => {
             <div className="container address">
               <h1 className="text-name">{name}</h1>
               <h2 className="text-address">
-               {address}
+                Perumahan Sapphire Mediterania, Wiradadi, Kec. Sokaraja,
+                Kabupaten Banyumas, Jawa Tengah, 53181 [Tokopedia Note: blok c
+                16] Sokaraja, Kab. Banyumas, 53181
               </h2>
               <button
                 className="btnAddress"
@@ -46,7 +83,7 @@ const Checkout = (props) => {
           <div className="container shopping-checkout">
             <h1 className="shopping-summary">Shopping summary</h1>
             <h1 className="text-order">
-              Order<span className="text-price-order">Rp. {totalPrice}</span>
+              Order<span className="text-price-order">Rp. {total}</span>
             </h1>
             <h1 className="text-delivery">
               Delivery<span className="text-price-delivery">Rp. 5000</span>
@@ -160,7 +197,7 @@ const Checkout = (props) => {
                 <h2 className="text-shopping-summary ">Shopping summary</h2>
                 <h2 className="text-summary-modal">
                   Order
-                  <span className="text-summary-price">Rp. {totalPrice}</span>
+                  <span className="text-summary-price">Rp. {total}</span>
                 </h2>
                 <h2 className="text-summary-modal">
                   Delivery<span className="text-summary-price">Rp. 5000</span>
@@ -173,7 +210,12 @@ const Checkout = (props) => {
                     Rp. {summaryPrice}
                   </h2>
                 </div>
-                <button type="button " className="btn btn-buy ">
+                <button
+                  type="button "
+                  className="btn btn-buy"
+                  onClick={handleSubmit}
+                  data-dismiss="modal"
+                >
                   Buy
                 </button>
               </div>

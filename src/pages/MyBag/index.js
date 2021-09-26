@@ -3,13 +3,17 @@ import Navbar from "../../components/module/NavbarAfterLogin";
 import CardBox from "../../components/base/CardBox";
 import "./style.css";
 // import ImageProduct from "../../assets/image/image/item.png"
-
-import {  useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { deleteCart } from "../../configs/redux/actions/orderAction";
 
 const MyBag = () => {
-      const history = useHistory()
- const { product, totalPrice } = useSelector((state) => state.order);
+  const { product, total } = useSelector((state) => state.order);
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    dispatch(deleteCart());
+  };
   const handleCheckout = () => {
     history.push("/checkout")
   };
@@ -31,9 +35,14 @@ const MyBag = () => {
             </div>
             <h1 className="text-select" for="select">
               Select all items
-              <span className="text-qty"> (2 items selected)</span>
+              <span className="text-qty">
+                {" "}
+                ({product.length} items selected)
+              </span>
             </h1>
-            <h1 className="text-delete">Delete</h1>
+            <h1 className="text-delete" onClick={handleDelete}>
+              Delete
+            </h1>
           </div>
           {product.map((item) => (
             <CardBox
@@ -49,7 +58,7 @@ const MyBag = () => {
           <h1 className="text-shopping-summary">Shopping summary</h1>
           <h1 className="text-total-price">
             Total prices
-            <span className="text-dollar-price">Rp. {totalPrice}</span>
+            <span className="text-dollar-price">Rp. {total}</span>
           </h1>
           <button type="button" className="btnBuy" onClick={handleCheckout}>
             BUY

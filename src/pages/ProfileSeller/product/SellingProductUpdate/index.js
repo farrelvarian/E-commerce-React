@@ -24,6 +24,10 @@ const ProfileSeller = () => {
     description: "",
     category_id: 0,
     category: "",
+    color: "",
+    size: "",
+    quantity: "",
+    status: "",
     image_id: "",
     image1: "",
     image2: "",
@@ -45,8 +49,8 @@ const ProfileSeller = () => {
   } else {
     [imagesArray] = [images.map((item) => URL.createObjectURL(item))];
   }
-console.log(imagesArray);
- const dispatch = useDispatch();
+  console.log(imagesArray);
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const params = useParams();
@@ -75,7 +79,7 @@ console.log(imagesArray);
   };
 
   const updateProductByid = () => {
-    dispatch(sellingProductUpdate(products, images,history,params));
+    dispatch(sellingProductUpdate(products, images, history, params));
     // const formData = new FormData();
     // formData.append("name", products.name);
     // formData.append("brand", products.brand);
@@ -140,27 +144,27 @@ console.log(imagesArray);
               placeholder="buah"
               autocomplete="off"
             />
-            <h2 className="section-desc">stock</h2>
+            {/* <h2 className="section-desc">stock</h2>
             <div className="section-name">
               <input
                 className="radio stock"
                 type="radio"
-                name="stock"
-                value="1"
+                name="New"
+                value="New"
               />
-              <label for="stock" className="text-radio-stock">
-                Baru
+              <label for="New" className="text-radio-stock">
+                New
               </label>
               <input
                 className="radio stock"
                 type="radio"
-                name="stock"
-                value="2"
+                name="Used"
+                value="Used"
               />
-              <label for="stock" className="text-radio-stock">
-                Bekas
+              <label for="Used" className="text-radio-stock">
+                Used
               </label>
-            </div>
+            </div> */}
           </div>
           <div className="section-container-photo">
             <h1 className="section-title">Photo of goods</h1>
@@ -169,7 +173,7 @@ console.log(imagesArray);
               <div className="photo-wrapper">
                 <img
                   className="foto utama"
-                  src={imagesArray[0]}
+                  src={imagesArray[0] ? imagesArray[0] : NoImage}
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">

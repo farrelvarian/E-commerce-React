@@ -46,7 +46,7 @@ export const registerUser = (data, history) => (dispatch) => {
         status: result.data.status,
       };
       dispatch({ type: "POST_REGISTER", payload: dataUser });
-      history.push(`/login/${result.data.data.role}`);
+      history.push(`/login/${result.data.data.role.toLowerCase()}`);
        toastify(
          "Success Register. Please check email to verification account",
          "info"
@@ -102,6 +102,6 @@ export const logoutUser = (history) => () => {
 const isAuth = false;
 const role = localStorage.getItem("role");
 localStorage.setItem("isAuth", isAuth);
-history.push(`/login/${role}`);
+history.push(`/login/${role.toLowerCase()}`);
 toastify("youre logged out, Bye!", "success");
 };

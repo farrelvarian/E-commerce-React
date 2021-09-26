@@ -18,7 +18,6 @@ const NavbarBefore = (props) => {
 
   
   const searchProduct = () => {
-  console.log(search);
     location.push(`/search?search=${search}`);
     location.go(0)
   };

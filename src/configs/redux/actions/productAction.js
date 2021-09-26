@@ -46,7 +46,10 @@ export const sellingProductAdd = (products, images) => (dispatch) => {
   formData.append("description", products.description);
   formData.append("category_id", products.category_id);
   formData.append("category", products.category);
-  formData.append("updateAt", products.updateAt);
+  formData.append("color", products.color);
+  formData.append("size", products.size);
+  formData.append("quantity", products.quantity);
+  formData.append("status", products.status);
   for (let i = 0; i < images.length; i++) {
     formData.append("images", images[i]);
   }
@@ -74,7 +77,10 @@ export const sellingProductUpdate = (products, images,history,params) => (dispat
   formData.append("description", products.description);
   formData.append("category_id", products.category_id);
   formData.append("category", products.category);
-  formData.append("updateAt", products.updateAt);
+    formData.append("color", products.color);
+    formData.append("size", products.size);
+    formData.append("quantity", products.quantity);
+    formData.append("status", products.status);
   for (let i = 0; i < images.length; i++) {
     formData.append("images", images[i]);
   }

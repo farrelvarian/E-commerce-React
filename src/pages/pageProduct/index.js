@@ -14,7 +14,7 @@ import { useHistory, useParams } from "react-router-dom";
 // import { BASE_URL } from "../../configs/configs";
 import { useDispatch } from "react-redux";
 import { pageProduct } from "../../configs/redux/actions/productAction";
-import { myBag, checkout } from "../../configs/redux/actions/orderAction";
+import { cartBag } from "../../configs/redux/actions/orderAction";
 // const axios = require("axios");
 
 const PageProduct = (props) => {
@@ -30,11 +30,13 @@ const PageProduct = (props) => {
 
   }, [id]);
  const handleMyBag = () => {
-   dispatch(myBag(products, history));
-   
+   dispatch(cartBag(products));
+   history.push("/mybag"); 
  };
+ 
  const handleCheckout = () => {
-   dispatch(checkout(products, history));
+   dispatch(cartBag(products));
+   history.push("/checkout");
  };
   return (
     <div className="wrapper-pageProduct">

@@ -6,6 +6,7 @@ import { ReactComponent as FilterImage } from "../../../assets/image/logo/filter
 import { ReactComponent as CartImage } from "../../../assets/image/logo/cart.svg";
 import { ReactComponent as NotifImage } from "../../../assets/image/logo/bell.svg";
 import { ReactComponent as MailImage } from "../../../assets/image/logo/mail.svg";
+import NoImage from "../../../assets/image/logo/user.svg";
 // import ProfileImage from "../../../assets/image/logo/profile.png";
 import "./style.css";
 import { useHistory,Link } from "react-router-dom";
@@ -13,7 +14,7 @@ import { useHistory,Link } from "react-router-dom";
 const NavbarAfter = (props) => {
   const image = localStorage.getItem("image");
   const [search, setSearch] = useState("");
- 
+
   let location = useHistory();
 
   const handleForm = (e) => {
@@ -22,7 +23,6 @@ const NavbarAfter = (props) => {
 
   
   const searchProduct = () => {
-  console.log(search);
     location.push(`/search?search=${search}`);
     location.go(0)
   };
@@ -70,7 +70,11 @@ const NavbarAfter = (props) => {
           </div>
           <div className={style.profile}>
             <Link to={linkProfile}>
-              <img className={style.profile_image} src={image} alt="iamge" />
+              <img
+                className={style.profile_image}
+                src={image === "null" ? NoImage : image}
+                alt="profile"
+              />
             </Link>
           </div>
         </div>

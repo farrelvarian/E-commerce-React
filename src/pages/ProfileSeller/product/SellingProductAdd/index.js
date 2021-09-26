@@ -24,14 +24,17 @@ const ProfileSeller = () => {
     price: 0,
     description: "",
     category_id: 25,
-    category: "",
+    category: "No Category",
+    color: "red",
+    size: "XL",
+    quantity: "",
+    status:"New",
     image_id: "",
     image1: "",
     image2: "",
     image3: "",
     image4: "",
     image5: "",
-    createdAt: new Date(),
   });
   const [images, setImages] = useState([]);
   const [imagesPreview] = [images.map((item) => URL.createObjectURL(item))]
@@ -107,32 +110,33 @@ const ProfileSeller = () => {
             <h2 className="section-desc">stock</h2>
             <input
               className="input stock"
-              name="stock"
+              name="quantity"
               type="stock"
               placeholder="buah"
+              onChange={(e) => handleForm(e)}
               autocomplete="off"
             />
-            <h2 className="section-desc">stock</h2>
+            {/* <h2 className="section-desc">stock</h2>
             <div className="section-name">
               <input
                 className="radio stock"
                 type="radio"
-                name="stock"
-                value="1"
+                name="New"
+                value="New"
               />
-              <label for="stock" className="text-radio-stock">
-                Baru
+              <label for="New" className="text-radio-stock">
+                New
               </label>
               <input
                 className="radio stock"
                 type="radio"
-                name="stock"
-                value="2"
+                name="Used"
+                value="Used"
               />
-              <label for="stock" className="text-radio-stock">
-                Bekas
+              <label for="Used" className="text-radio-stock">
+                Used
               </label>
-            </div>
+            </div> */}
           </div>
           <div className="section-container-photo">
             <h1 className="section-title">Photo of goods</h1>
@@ -141,7 +145,7 @@ const ProfileSeller = () => {
               <div className="photo-wrapper">
                 <img
                   className="foto utama"
-                  src={imagesPreview[0]}
+                  src={imagesPreview[0] ? imagesPreview[0] : NoImage}
                   alt="foto utama"
                 />
                 <div className="photo-preview-wrapper">

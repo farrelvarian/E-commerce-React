@@ -5,6 +5,7 @@ import LogoPencil from "../../../assets/image/logo/pencil.svg";
 import MyAccount from "../../../assets/image/logo/myAccount.png";
 import ShoppingAddress from "../../../assets/image/logo/shoppingAddress.png";
 import MyOrder from "../../../assets/image/logo/myOrder.png";
+import NoImage from "../../../assets/image/logo/user.svg";
 import { Link } from "react-router-dom";
 
 const sidebarCustommer = (props) => {
@@ -13,7 +14,7 @@ const sidebarCustommer = (props) => {
     return (
       <div className="sidebar-container">
         <div class="sidebar-image">
-          <img className="sidebar-profile-custommer" src={image} alt="profile" />
+          <img className="sidebar-profile-custommer" src={image==="null"?NoImage:image} alt="profile" />
           <div>
             <h2 className="sidebar-profile-name">{name}</h2>
             <h3 className="ubah-profile-wrapper">

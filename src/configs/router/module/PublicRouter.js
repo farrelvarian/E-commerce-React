@@ -7,7 +7,6 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) => {
-          console.log(isAuth);
         if (isAuth === "true") {
           return (
             <>
