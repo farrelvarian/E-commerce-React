@@ -14,7 +14,7 @@ export class ButtonIncDec extends Component {
     this.state = {
       quantity: 1,
       show: true,
-      max: this.props.stock,
+      max: 10,
       min: 1,
     };
   }
@@ -53,25 +53,21 @@ export class ButtonIncDec extends Component {
   render() {
     return (
       <div className="wrapper-size-qty">
-        <button className="minus" onClick={this.props.Decrement}>
+        <button className="minus" onClick={this.DecreaseItem}>
           -
         </button>
         <input
           className="size-qty"
-          type="number"
-          min={this.state.min}
-          max={this.state.max}
-          value={this.props.value}
-          onChange={this.props.onChange}
+          value={this.state.quantity}
+          onChange={this.handleChange}
         />
-        <button className="plus" onClick={this.props.Increment}>
+        <button className="plus" onClick={this.IncrementItem}>
           +
         </button>
       </div>
     );
   }
 }
-
 
 export default ButtonIncDec;
 
