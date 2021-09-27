@@ -28,7 +28,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
 
   <p align='center'>
   <span>
-      <image { object-fit: cover; width: 400; height:200 } src='./screenshot/1.jpeg' />
+      <image style" object-fit: cover; width:400; height:200 " src='./screenshot/1.jpeg' />
       <image { object-fit: cover; width: 400; height:200 } src='./screenshot/2.jpeg' />
       <image { object-fit: cover; width: 400; height:200 } src='./screenshot/3.jpeg' />
       <image { object-fit: cover; width: 400; height:200 } src='./screenshot/4.jpeg' />
