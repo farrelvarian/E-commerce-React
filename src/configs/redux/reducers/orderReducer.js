@@ -11,11 +11,11 @@ const orderReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'CART' :
             return {
-                ...state,
-                item: state.item + 1,
-                product: [...state.product, action.payload],
-                total: state.total+action.payload.price
-            }
+              ...state,
+              item: state.item + 1,
+              product: [...state.product, action.payload],
+              total: state.total + (action.payload.price * action.payload.qty),
+            };
         case 'ORDER_DETAIL' :
             return {
                 ...state,

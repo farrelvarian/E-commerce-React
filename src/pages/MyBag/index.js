@@ -49,7 +49,9 @@ const MyBag = () => {
               name={item.name}
               brand={item.brand}
               image={item.image1}
+              qty={item.qty}
               price={item.price}
+              total={item.qty * item.price}
               type="mybag"
             />
           ))}

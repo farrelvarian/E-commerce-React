@@ -24,20 +24,22 @@ const PageProduct = (props) => {
   let { id } = useParams();
   const [products, setProducts] = useState({});
   const [categories, setCategories] = useState([]);
+  const [qty, setQty] = useState(1);
 // console.log(products);
   useEffect( () => {
      dispatch(pageProduct(id, setProducts, setCategories));
 
   }, [id]);
  const handleMyBag = () => {
-   dispatch(cartBag(products));
+   dispatch(cartBag({...products,qty:qty}));
    history.push("/mybag"); 
  };
  
  const handleCheckout = () => {
-   dispatch(cartBag(products));
+   dispatch(cartBag({ ...products, qty: qty }));
    history.push("/checkout");
  };
+
   return (
     <div className="wrapper-pageProduct">
       <Navbar />
@@ -72,7 +74,7 @@ const PageProduct = (props) => {
               />
               <img
                 className="preview-image-pageProduct"
-                src={products.image5?products.image5:NoImage}
+                src={products.image5 ? products.image5 : NoImage}
                 alt="5"
               />
             </div>
@@ -129,7 +131,28 @@ const PageProduct = (props) => {
                 </div>
                 <div>
                   <h3 class="text-size-qty">Jumlah</h3>
-                  <ButtonIncDec />
+                  <div className="wrapper-size-qty">
+                    <button
+                      className="minus"
+                      onClick={() => setQty(qty > 0 ? qty - 1 : qty)}
+                    >
+                      -
+                    </button>
+                    <input
+                      className="size-qty"
+                      type="number"
+                      value={qty}
+                      // onChange={setQty(qty < products.stock ? qty + 1 : qty)}
+                    />
+                    <button
+                      className="plus"
+                      onClick={() =>
+                        setQty(qty < products.quantity ? qty + 1 : qty)
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
 

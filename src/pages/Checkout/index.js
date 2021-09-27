@@ -14,7 +14,7 @@ import { useHistory } from "react-router";
 const Checkout = (props) => {
   const dispatch = useDispatch()
   const history = useHistory()
-   const { product, total, quantity } = useSelector((state) => state.order);
+   const { product, total } = useSelector((state) => state.order);
    const summaryPrice = total + 5000;
    const name = localStorage.getItem("name");
   const user_id = localStorage.getItem("id");
@@ -31,10 +31,9 @@ const Checkout = (props) => {
              console.log(result,"response");
              const product_id = item.id;
              const payment_id = result.id;
-             console.log(quantity);
              const dataOrderItem = {
                product_id,
-               quantity,
+               quantity:product.qty,
                payment_id,
                size:"XL",
                color:"red",
@@ -75,7 +74,7 @@ const Checkout = (props) => {
                 name={item.name}
                 brand={item.brand}
                 image={item.image1}
-                price={item.price}
+                total={item.qty*item.price}
                 type="checkout"
               />
             ))}
