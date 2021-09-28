@@ -1,11 +1,11 @@
 .slider_wrapper {
     margin-top: 47px;
-    width: 1440px;
+    width: 90%;
 }
 
 .clipme {
     position: absolute;
-    width: 456px;
+    width: 400px;
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
@@ -46,7 +46,7 @@
     }
     .clipme {
         position: absolute;
-        width: 414px;
+        width: 400px;
         height: 180px;
         object-fit: cover;
         border-radius: 10px;

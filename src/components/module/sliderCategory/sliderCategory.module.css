@@ -1,13 +1,13 @@
 .slider_wrapper {
     margin-top: 47px;
-    width: 1440px;
+    width: 90%;
 }
 
 .content_slider {
     position: relative;
     margin-top: 30px;
     border-radius: 10px;
-    width: 206px !important;
+    width: 180px !important;
     height: 220px !important;
     display: flex !important;
     justify-content: center;

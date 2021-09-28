@@ -23,7 +23,7 @@
 }
 
 .card_container {
-    width: 1440px;
+    width: 90%;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {

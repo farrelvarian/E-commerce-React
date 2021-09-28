@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 1440px;
+    width: 90%;
 }
 
 .nav-wrapper {
@@ -261,7 +261,7 @@ img.preview-image-pageProduct {
 }
 
 .card_container {
-    width: 1440px;
+    width: 90%;
 }
 
 @media (min-width: 992px) {

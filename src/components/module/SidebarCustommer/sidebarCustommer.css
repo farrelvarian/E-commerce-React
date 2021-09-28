@@ -18,7 +18,7 @@
     
     .sidebar-menu-custommer {
         display: flex;
-        margin-left: 300px;
+        margin-left: 200px;
         margin-bottom: 30px;
         align-items: center;
     }
@@ -41,7 +41,7 @@
     
     .sidebar-image {
         display: flex;
-        margin-left: 350px;
+        margin-left: 200px;
         padding-top: 50px;
         margin-bottom: 50px;
     }
