@@ -33,7 +33,7 @@ E-commerce website focus on fashion that brings together sellers and customers. 
       <image width="700" src='./screenshot/3.jpeg' />
       <image width="700" src='./screenshot/4.jpeg' />
       <image width="700" src='./screenshot/5.jpeg' />
-      <image width="700" src='./screenshot/6.jpeg' />
+      <image width="400" src='./screenshot/6.jpeg' />
       <image width="400" src='./screenshot/7.jpeg' />
       <image width="400" src='./screenshot/8.jpeg' />
       <image width="400" src='./screenshot/9.jpeg' />
